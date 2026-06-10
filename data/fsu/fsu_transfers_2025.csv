@@ -1,0 +1,57 @@
+season,firstName,lastName,position,origin,destination,transferDate,rating,stars,eligibility,direction
+2025,Jarvis,Boatwright Jr.,S,USC,Florida State,2025-04-22T22:21:00.000Z,0.85,3.0,Immediate,Incoming
+2025,Gavin,Sawchuk,RB,Oklahoma,Florida State,2025-04-26T02:55:00.000Z,0.87,3.0,Immediate,Incoming
+2025,Gavin,Blackwell,WR,North Carolina,Florida State,2025-05-04T16:03:00.000Z,0.85,3.0,Immediate,Incoming
+2025,Deante,McCray,EDGE,Western Kentucky,Florida State,2024-12-21T00:47:00.000Z,0.87,3.0,Immediate,Incoming
+2025,Josh,Raymond,OT,Vanderbilt,Florida State,2025-04-23T15:00:00.000Z,0.85,3.0,Immediate,Incoming
+2025,Ja'Elyne,Matthews,OT,Rutgers,Florida State,2025-04-30T13:29:00.000Z,0.86,3.0,Immediate,Incoming
+2025,Jerry,Wilson,CB,Houston,Florida State,2025-04-25T22:31:00.000Z,0.92,4.0,Immediate,Incoming
+2025,Jaylen,King,QB,East Tennessee State,Florida State,2025-04-27T00:34:00.000Z,0.84,3.0,Immediate,Incoming
+2025,Adrian,Medley,IOL,UCF,Florida State,2024-12-21T17:01:00.000Z,0.88,3.0,Immediate,Incoming
+2025,Randy,Pittman Jr.,TE,UCF,Florida State,2024-12-21T18:40:00.000Z,0.85,3.0,Immediate,Incoming
+2025,James,Williams,EDGE,Nebraska,Florida State,2024-12-17T22:35:00.000Z,0.92,4.0,Immediate,Incoming
+2025,Stefon,Thompson,LB,Nebraska,Florida State,2024-12-14T15:20:00.000Z,0.86,3.0,Immediate,Incoming
+2025,Micah,Pettus,OT,Ole Miss,Florida State,2024-12-24T17:06:00.000Z,0.91,4.0,Immediate,Incoming
+2025,Luke,Petitbon,IOL,Wake Forest,Florida State,2024-12-26T21:51:00.000Z,0.92,4.0,Immediate,Incoming
+2025,Gunnar,Hansen,OT,Vanderbilt,Florida State,2024-12-17T23:51:00.000Z,0.86,3.0,Immediate,Incoming
+2025,Elijah,Herring,LB,Memphis,Florida State,2025-01-05T18:54:00.000Z,0.86,3.0,Immediate,Incoming
+2025,Squirrel,White,WR,Tennessee,Florida State,2025-01-05T23:26:00.000Z,0.9,4.0,Immediate,Incoming
+2025,Deamontae,Diggs,DL,Coastal Carolina,Florida State,2025-01-04T00:02:00.000Z,0.9,4.0,Immediate,Incoming
+2025,Duce,Robinson,WR,USC,Florida State,2024-12-23T00:05:00.000Z,0.95,4.0,Immediate,Incoming
+2025,Caleb,LaVallee,LB,North Carolina,Florida State,2025-01-03T18:06:00.000Z,0.84,3.0,Immediate,Incoming
+2025,Jayson,Jenkins,DL,Tennessee,Florida State,2025-01-05T14:14:00.000Z,0.91,4.0,Immediate,Incoming
+2025,Thomas,Castellanos,QB,Boston College,Florida State,2024-12-12T01:56:00.000Z,0.87,3.0,Immediate,Incoming
+2025,Aaron,Hester,EDGE,Florida State,Liberty,2025-04-21T23:03:00.000Z,0.84,3.0,Immediate,Outgoing
+2025,Harold,Stubbs IV,S,Florida State,Florida,2025-05-20T00:02:00.000Z,0.8,3.0,Immediate,Outgoing
+2025,Jaylen,Early,OT,Florida State,Missouri,2025-04-22T17:19:00.000Z,0.86,3.0,Immediate,Outgoing
+2025,Hykeem,Williams,WR,Florida State,Colorado,2025-04-29T16:14:00.000Z,0.9,4.0,Immediate,Outgoing
+2025,Jordan,Scott,WR,Florida State,Maryland,2025-04-25T22:31:00.000Z,0.86,3.0,Immediate,Outgoing
+2025,DD,Holmes,DL,Florida State,Maryland,2025-01-05T16:38:00.000Z,0.87,3.0,Immediate,Outgoing
+2025,Omarion,Cooper,S,Florida State,Memphis,2024-12-20T13:08:00.000Z,,3.0,Immediate,Outgoing
+2025,DeMarco,Ward,LB,Florida State,Memphis,2024-12-24T01:28:00.000Z,0.84,3.0,Immediate,Outgoing
+2025,Deuce,Spann,WR,Florida State,Pittsburgh,2024-12-20T14:29:00.000Z,0.87,3.0,Immediate,Outgoing
+2025,D'Nas,White,DL,Florida State,,2025-04-21T22:51:00.000Z,,3.0,Immediate,Outgoing
+2025,Timir,Hickman-Collins,LB,Florida State,North Carolina,2025-04-25T23:53:00.000Z,0.85,3.0,Immediate,Outgoing
+2025,Trever,Jackson,QB,Florida State,Arkansas,2025-04-24T13:56:00.000Z,0.85,3.0,Immediate,Outgoing
+2025,Jalen,Brown,WR,Florida State,Arkansas,2025-05-05T02:46:00.000Z,0.86,3.0,Immediate,Outgoing
+2025,TJ,Ferguson,IOL,Florida State,Syracuse,2025-04-21T18:18:00.000Z,0.9,4.0,Immediate,Outgoing
+2025,Luke,Kromenhoek,QB,Florida State,Mississippi State,2024-12-17T16:36:00.000Z,0.94,4.0,Immediate,Outgoing
+2025,Lamont,Green Jr.,EDGE,Florida State,Florida International,2024-12-21T20:18:00.000Z,0.85,3.0,Immediate,Outgoing
+2025,Omar,Graham Jr.,LB,Florida State,,2024-12-12T22:00:42.000Z,,3.0,Withdrawn,Outgoing
+2025,Markeston,Douglas,TE,Florida State,,2025-04-27T01:08:00.000Z,0.86,3.0,Immediate,Outgoing
+2025,Xavier,Perkins,EDGE,Florida State,Florida A&M,2024-12-17T13:06:00.000Z,,,Immediate,Outgoing
+2025,Byron,Turner Jr.,EDGE,Florida State,Tulsa,2025-01-08T23:13:00.000Z,0.84,3.0,Immediate,Outgoing
+2025,Marvin,Jones Jr.,EDGE,Florida State,Oklahoma,2025-01-06T00:40:00.000Z,0.92,4.0,Immediate,Outgoing
+2025,Dante,Anderson,EDGE,Florida State,Florida International,2025-01-05T03:21:00.000Z,0.84,3.0,Immediate,Outgoing
+2025,Destyn,Hill,WR,Florida State,LSU,2024-12-17T17:12:00.000Z,0.84,3.0,Immediate,Outgoing
+2025,Julian,Armella,IOL,Florida State,UCLA,2024-12-15T18:23:00.000Z,0.85,3.0,Immediate,Outgoing
+2025,Darion,Williamson,WR,Florida State,Miami (OH),2025-01-08T18:40:00.000Z,0.84,3.0,Immediate,Outgoing
+2025,Patrick,Payton,EDGE,Florida State,LSU,2024-12-21T19:13:00.000Z,0.95,4.0,Immediate,Outgoing
+2025,Brian,Courtney,TE,Florida State,Tennessee Tech,2025-01-15T20:03:00.000Z,,3.0,Immediate,Outgoing
+2025,Jackson,West,TE,Florida State,Western Kentucky,2024-12-28T11:04:00.000Z,0.85,3.0,Immediate,Outgoing
+2025,Shawn,Murphy,LB,Florida State,South Carolina,2024-12-23T17:22:00.000Z,0.86,3.0,Immediate,Outgoing
+2025,Jerrale,Powers,TE,Florida State,Stephen F. Austin,2025-01-11T22:13:00.000Z,,3.0,Immediate,Outgoing
+2025,Tomiwa,Durojaiye,DL,Florida State,Illinois,2024-12-23T22:13:00.000Z,0.88,3.0,Immediate,Outgoing
+2025,Dylan,McNamara,QB,Florida State,,2024-12-10T20:14:00.000Z,,2.0,Immediate,Outgoing
+2025,Malik,Benson,WR,Florida State,Oregon,2025-01-07T15:04:00.000Z,0.91,4.0,Immediate,Outgoing
+2025,Grady,Kelly,DL,Florida State,Michigan State,2024-12-20T03:25:00.000Z,0.86,3.0,Immediate,Outgoing

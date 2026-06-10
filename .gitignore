@@ -1,0 +1,8 @@
+.env
+.venv/
+.idea/
+__pycache__/
+*.pyc
+.DS_Store.idea/
+data/fsu/fsu_ind_followers
+*.xslx
