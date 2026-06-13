@@ -135,19 +135,19 @@ import shap
 explainer = shap.TreeExplainer(model)
 shap_values = explainer.shap_values(X_train)
 
-# # Summary beeswarm plot — shows each feature's direction + magnitude
-# shap.summary_plot(shap_values, X_train, show=False)
-# plt.tight_layout()
-# plt.savefig('data/fsu/shap_summary.png', dpi=150, bbox_inches='tight')
-# plt.show()
-# print("SHAP summary plot saved.")
+# Summary beeswarm plot — shows each feature's direction + magnitude
+shap.summary_plot(shap_values, X_train, show=False)
+plt.tight_layout()
+plt.savefig('data/fsu/shap_summary.png', dpi=150, bbox_inches='tight')
+plt.show()
+print("SHAP summary plot saved.")
 
-# # Bar plot — mean absolute SHAP (simple, good for writeup)
-# shap.summary_plot(shap_values, X_train, plot_type='bar', show=False)
-# plt.tight_layout()
-# plt.savefig('data/fsu/shap_bar.png', dpi=150, bbox_inches='tight')
-# plt.show()
-# print("SHAP bar plot saved.")
+# Bar plot — mean absolute SHAP (simple, good for writeup)
+shap.summary_plot(shap_values, X_train, plot_type='bar', show=False)
+plt.tight_layout()
+plt.savefig('data/fsu/shap_bar.png', dpi=150, bbox_inches='tight')
+plt.show()
+print("SHAP bar plot saved.")
 
 # use on3/whisper as floor
 for name, nil_val in known_nil.items():

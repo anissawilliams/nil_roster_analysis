@@ -1,0 +1,31 @@
+season,firstName,lastName,position,origin,destination,transferDate,rating,stars,eligibility,direction
+2025,Waltclaire,Flynn Jr.,IOL,UCF,Georgia,2025-04-26T15:12:00.000Z,0.86,3.0,Immediate,Incoming
+2025,Elo,Modozie,EDGE,Army,Georgia,2025-04-21T00:16:00.000Z,0.92,4.0,Immediate,Incoming
+2025,Josh,Horton,DL,Miami,Georgia,2025-04-21T00:11:00.000Z,0.87,3.0,Immediate,Incoming
+2025,Noah,Thomas,WR,Texas A&M,Georgia,2025-01-07T21:47:00.000Z,0.93,4.0,Immediate,Incoming
+2025,Josh,McCray,RB,Illinois,Georgia,2025-04-21T00:15:00.000Z,0.89,3.0,Immediate,Incoming
+2025,Zachariah,Branch,WR,USC,Georgia,2025-01-05T21:29:00.000Z,0.95,4.0,Immediate,Incoming
+2025,Jaden,Harris,S,Miami,Georgia,2025-01-07T14:22:12.000Z,0.86,3.0,Immediate,Incoming
+2025,Micah,Bell,WR,Vanderbilt,Georgia,2025-01-08T17:53:00.000Z,0.83,3.0,Immediate,Incoming
+2025,Zion,Branch,S,USC,Georgia,2025-01-05T21:30:00.000Z,0.87,3.0,Immediate,Incoming
+2025,Adrian,Maddox,S,UAB,Georgia,2025-01-06T00:43:00.000Z,0.86,3.0,Immediate,Incoming
+2025,Jaden,Rashada,QB,Georgia,Sacramento State,2025-04-25T23:34:00.000Z,0.89,3.0,Immediate,Outgoing
+2025,Marques,Easley,IOL,Georgia,Purdue,2025-04-26T21:26:00.000Z,0.87,3.0,Immediate,Outgoing
+2025,Jake,Pope,S,Georgia,UNLV,2025-01-07T18:14:00.000Z,,4.0,Immediate,Outgoing
+2025,Branson,Robinson,RB,Georgia,Georgia State,2025-04-30T00:41:00.000Z,0.87,3.0,Immediate,Outgoing
+2025,Chris,Peal,CB,Georgia,Syracuse,2025-04-22T01:29:00.000Z,0.86,3.0,Immediate,Outgoing
+2025,Nic,Reeves,IOL,Georgia,Temple,2025-04-28T23:53:00.000Z,,,Immediate,Outgoing
+2025,Nitro,Tuggle,WR,Georgia,Purdue,2025-04-21T23:26:00.000Z,0.87,3.0,Immediate,Outgoing
+2025,Justyn,Rhett,S,Georgia,Nebraska,2024-12-22T02:52:00.000Z,0.86,3.0,Immediate,Outgoing
+2025,Michael,Jackson III,WR,Georgia,Purdue,2025-04-21T22:05:00.000Z,0.85,3.0,Immediate,Outgoing
+2025,Jamaal,Jarrett,DL,Georgia,USC,2024-12-21T18:10:00.000Z,0.9,4.0,Immediate,Outgoing
+2025,Troy,Bowles,LB,Georgia,Michigan,2024-12-21T18:22:00.000Z,0.86,3.0,Immediate,Outgoing
+2025,Sam,M'Pemba,EDGE,Georgia,Texas A&M,2024-12-23T16:14:59.000Z,0.86,3.0,Immediate,Outgoing
+2025,Noah,Jones,K,Georgia,Samford,2025-01-10T19:05:00.000Z,,,Immediate,Outgoing
+2025,Anthony,Evans III,WR,Georgia,Mississippi State,2025-01-15T19:23:00.000Z,0.86,3.0,Immediate,Outgoing
+2025,Damon,Wilson II,EDGE,Georgia,Missouri,2025-01-15T01:44:00.000Z,0.98,5.0,Immediate,Outgoing
+2025,Julian,Humphrey,CB,Georgia,Texas A&M,2024-12-15T14:30:00.000Z,0.91,4.0,Immediate,Outgoing
+2025,David,Daniel-Sisavanh,S,Georgia,Hudson Valley,2025-01-09T18:16:00.000Z,0.85,3.0,Immediate,Outgoing
+2025,Carson,Beck,QB,Georgia,Miami,2025-01-10T06:00:00.000Z,0.96,4.0,Immediate,Outgoing
+2025,Collin,Gill,CB,Georgia,Charlotte,2025-01-23T06:00:00.000Z,,3.0,Immediate,Outgoing
+2025,Rara,Thomas,WR,Georgia,Hudson Valley,2025-03-26T17:19:00.000Z,,3.0,Immediate,Outgoing

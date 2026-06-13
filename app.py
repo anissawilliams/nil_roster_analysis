@@ -3,8 +3,14 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.ticker as mticker
 import sqlite3
-
+from ask_data import render_ask_tab
 st.set_page_config(page_title="RosterEdge – FSU", page_icon="🏈", layout="wide")
+
+
+import os
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DB_PATH = os.path.join(BASE_DIR, "rosterEdge.db")
+
 
 GARNET = "#782F40"
 GOLD   = "#CEB888"
@@ -20,7 +26,7 @@ def inches_to_feet(n):
 
 @st.cache_data
 def load_data():
-    conn = sqlite3.connect("rosterEdge.db")
+    conn = sqlite3.connect(DB_PATH)
 
     roster = pd.read_sql("SELECT * FROM roster", conn)
     roster["name"]           = roster["firstName"] + " " + roster["lastName"]
@@ -52,7 +58,7 @@ st.markdown(
 )
 st.divider()
 
-tab1, tab2, tab3 = st.tabs(["📋 Roster", "💰 NIL Valuations", "🔄 Transfer Portal"])
+tab1, tab2, tab3, tab4 = st.tabs(["📋 Roster", "💰 NIL Valuations", "🔄 Transfer Portal", "🔮 Ask the Data"])
 
 ##### ROSTER TAB #####
 with tab1:
@@ -174,7 +180,6 @@ with tab3:
     ax4.set_title("Outgoing Transfer Losses by Position")
     st.pyplot(fig4)
 
-    # TODO: outgoing transfer losses by rating...
     st.markdown("#### Outgoing by Rating")
     out_pos = outgoing["stars"].value_counts()
     fig4, ax4 = plt.subplots(figsize=(8, 3))
@@ -183,6 +188,7 @@ with tab3:
     ax4.set_title("Outgoing Transfer Losses by Stars")
     st.pyplot(fig4)
 
-
+with tab4:
+    render_ask_tab()
 
 st.divider()

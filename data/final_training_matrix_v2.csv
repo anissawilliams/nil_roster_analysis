@@ -1,0 +1,109 @@
+id,firstName,lastName,team,weight,height,jersey,year,position,homeCity,homeState,homeCountry,homeLatitude,homeLongitude,homeCountyFIPS,recruitIds,Player,recruiting_rating,recruiting_stars,recruiting_rank,source
+4430225,Richie,Leonard IV,Florida State,327,74,67,4,OL,Cocoa,FL,USA,28.3553873,-80.7318827,12009.0,[],Richie Leonard IV,0.9997,5.0,1.0,cfbd_2024
+4430894,Caziah,Holmes,Florida State,219,71,26,4,RB,Titusville,FL,USA,28.6122187,-80.8075538,12009.0,['118599'],Caziah Holmes,0.9997,5.0,1.0,cfbd_2024
+4431319,Luke,Petitbon,Florida State,303,74,51,4,OL,Annapolis,MD,USA,38.9786401,-76.492786,24003.0,[],Luke Petitbon,0.92,4.0,,transfer_portal
+4432664,Gavin,Blackwell,Florida State,185,71,6,4,WR,Indian Trail,NC,USA,35.0768141,-80.6692352,37179.0,['115951'],Gavin Blackwell,0.85,3.0,,transfer_portal
+4568991,Adrian,Medley,Florida State,305,77,76,4,OL,Pensacola,FL,USA,30.421309,-87.2169149,12033.0,[],Adrian Medley,0.88,3.0,,transfer_portal
+4602791,Micah,Pettus,Florida State,355,79,57,4,OL,Harvest,AL,USA,34.857193249999995,-86.74907012252524,1089.0,[],Micah Pettus,0.91,4.0,,transfer_portal
+4606193,Bryson,Estes,Florida State,282,75,77,4,OL,Mcdonough,GA,USA,33.4473361,-84.1468616,13151.0,['116315'],Bryson Estes,0.9997,5.0,1.0,cfbd_2024
+4612297,Markeston,Douglas,Florida State,270,77,87,4,TE,Brownsville,TN,USA,35.5939671,-89.262291,47075.0,['119787'],Markeston Douglas,0.86,3.0,,transfer_portal
+4612836,Darrell,Jackson Jr.,Florida State,337,77,6,4,DL,Quincy,FL,USA,30.5871948,-84.5832619,12039.0,[],Darrell Jackson Jr.,0.9997,5.0,1.0,cfbd_2024
+4684956,Stefon,Thompson,Florida State,240,73,7,4,LB,Long Island,NY,USA,43.1518603,-76.06119317631908,36067.0,[],Stefon Thompson,0.86,3.0,,transfer_portal
+4685437,Earl,Little Jr.,Florida State,193,73,0,3,DB,Fort Lauderdale,FL,USA,26.1223084,-80.1433786,12011.0,['113649'],Earl Little Jr.,0.9997,5.0,1.0,cfbd_2024
+4685447,Daniel,Lyons,Florida State,292,76,5,3,DL,Miami,FL,USA,25.7742658,-80.1936589,12086.0,['114010'],Daniel Lyons,0.9997,5.0,1.0,cfbd_2024
+4685545,Gavin,Sawchuk,Florida State,202,71,27,3,RB,Littleton,CO,USA,39.613321,-105.0166498,8005.0,['113641'],Gavin Sawchuk,0.87,3.0,,transfer_portal
+4685723,Roydell,Williams,Florida State,221,70,5,4,RB,Hueytown,AL,USA,33.4512197,-86.9966606,1073.0,['111276'],Roydell Williams,0.9997,5.0,1.0,cfbd_2024
+4689191,Gunnar,Hansen,Florida State,330,77,55,4,OL,Boca Raton,FL,USA,26.3586885,-80.0830984,12099.0,['117198'],Gunnar Hansen,0.86,3.0,,transfer_portal
+4694352,Deamontae,Diggs,Florida State,258,77,13,4,DL,Mckeesport,PA,USA,40.3478472,-79.864215,42003.0,[],Deamontae Diggs,0.9,4.0,,transfer_portal
+4695758,Jacob,Rizy,Florida State,316,77,64,4,OL,Westport,CT,USA,41.1414855,-73.3578955,9001.0,[],Jacob Rizy,0.9997,5.0,1.0,cfbd_2024
+4701943,Elijah,Herring,Florida State,235,74,31,4,LB,Murfreesboro,TN,USA,35.845999,-86.3920452,47149.0,[],Elijah Herring,0.86,3.0,,transfer_portal
+4707203,Shyheim,Brown,Florida State,205,74,1,4,DB,Lake City,FL,USA,30.1896756,-82.6392899,12023.0,[],Shyheim Brown,0.9997,5.0,1.0,cfbd_2024
+4773919,Tommy,Castellanos,Florida State,201,71,1,4,QB,Waycross,GA,USA,31.2135511,-82.3540178,13299.0,[],Tommy Castellanos,0.9997,5.0,1.0,cfbd_2024
+4808743,Omar,Graham Jr.,Florida State,235,73,9,3,LB,Fort Lauderdale,FL,USA,26.1223084,-80.1433786,12011.0,['114168'],Omar Graham Jr.,,3.0,,transfer_portal
+4837203,Jeremiah,Wilson,Florida State,183,70,19,4,DB,Kissimmee,FL,USA,28.2918995,-81.4075838,12097.0,['111539'],Jeremiah Wilson,0.9997,5.0,1.0,cfbd_2024
+4837206,AJ,Cottrill,Florida State,228,72,41,3,LB,Tampa,FL,USA,27.9477595,-82.458444,12057.0,[],AJ Cottrill,0.9997,5.0,1.0,cfbd_2024
+4837247,Deante,McCray,Florida State,274,76,8,3,DL,Jacksonville,FL,USA,30.3321838,-81.655651,12031.0,[],Deante McCray,0.87,3.0,,transfer_portal
+4870752,Conrad,Hussey,Florida State,197,72,12,3,DB,Sunrise,FL,USA,26.1482449,-80.32888594100868,12011.0,['111439'],Conrad Hussey,0.9997,5.0,1.0,cfbd_2024
+4870765,Edwin,Joseph,Florida State,198,72,3,2,DB,Tamarac,FL,USA,26.205211499999997,-80.2710556635621,12011.0,['111575'],Edwin Joseph,0.9997,5.0,1.0,cfbd_2024
+4870922,Duce,Robinson,Florida State,222,78,0,3,WR,Phoenix,AZ,USA,33.4484367,-112.0741417,4013.0,['111261'],Duce Robinson,0.95,4.0,,transfer_portal
+4870952,Lucas,Simmons,Florida State,315,80,79,2,OL,Stockholm,,Sweden,,,,['111376'],Lucas Simmons,0.9997,5.0,1.0,cfbd_2024
+4870954,Randy,Pittman Jr.,Florida State,237,74,13,3,TE,Panama City,FL,USA,30.1600827,-85.6545729,12005.0,['112002'],Randy Pittman Jr.,0.85,3.0,,transfer_portal
+4870955,Samuel,Singleton Jr.,Florida State,201,71,28,2,RB,Charleston,SC,USA,32.7876012,-79.9402728,45019.0,['111636'],Samuel Singleton Jr.,0.9997,5.0,1.0,cfbd_2024
+4871007,KJ,Sampson,Florida State,309,75,56,2,DL,New Bern,NC,USA,35.1084931,-77.0441143,37049.0,['111493'],KJ Sampson,0.9997,5.0,1.0,cfbd_2024
+4871148,Jaylin,Lucas,Florida State,173,69,12,3,RB,Houma,LA,USA,29.5957696,-90.7195348,22109.0,[],Jaylin Lucas,0.9997,5.0,1.0,cfbd_2024
+4899348,K.J.,Kirkland,Florida State,212,73,24,2,DB,Jacksonville,FL,USA,30.3321838,-81.655651,12031.0,['111765'],K.J. Kirkland,0.9997,5.0,1.0,cfbd_2024
+4899480,Blake,Nichelson,Florida State,229,75,20,3,LB,Ripon,CA,USA,37.741595,-121.1243828,6077.0,['111424'],Blake Nichelson,0.9997,5.0,1.0,cfbd_2024
+4906026,Mason,Arnold,Florida State,225,72,32,4,LS,Tampa,FL,USA,27.9477595,-82.458444,12057.0,[],Mason Arnold,0.9997,5.0,1.0,cfbd_2024
+4918434,Justin,Cryer,Florida State,237,73,28,3,LB,Katy,TX,USA,29.7857853,-95.8243956,48157.0,[],Justin Cryer,0.9997,5.0,1.0,cfbd_2024
+4920158,Brock,Glenn,Florida State,217,74,11,2,QB,Covington,TN,USA,35.5642474,-89.6464672,47167.0,['111732'],Brock Glenn,0.9997,5.0,1.0,cfbd_2024
+4921255,Caleb,LaVallee,Florida State,228,73,29,2,LB,Marietta,GA,USA,33.9528472,-84.5496148,13067.0,['111992'],Caleb LaVallee,0.84,3.0,,transfer_portal
+5075960,Quindarrius,Jones,Florida State,192,74,16,3,DB,Meridian,MS,USA,32.3643098,-88.703656,28075.0,['112097'],Quindarrius Jones,0.9997,5.0,1.0,cfbd_2024
+5079362,Jonathan,Daniels,Florida State,290,76,74,1,OL,Pensacola,FL,USA,30.421309,-87.2169149,12033.0,['108886'],Jonathan Daniels,0.9239,4.0,188.0,cfbd_2024
+5079364,Kam,Davis,Florida State,217,70,3,2,RB,Albany,GA,USA,31.5782062,-84.1556809,13095.0,['108796'],Kam Davis,0.9523,4.0,98.0,cfbd_2024
+5079394,Jamorie,Flagg,Florida State,314,75,99,1,DL,Miami,FL,USA,25.7742658,-80.1936589,12086.0,[],Jamorie Flagg,0.8686,3.0,954.0,cfbd_2024
+5079403,Camdon,Frier,Florida State,192,72,88,1,WR,Lake City,FL,USA,30.1896756,-82.6392899,12023.0,['109177'],Camdon Frier,0.89,3.0,479.0,cfbd_2024
+5079413,BJ,Gibson,Florida State,198,72,10,2,WR,Rochelle,GA,USA,31.9510105,-83.4562744,13315.0,['109113'],BJ Gibson,0.895,4.0,407.0,cfbd_2024
+5079488,Jamari,Howard,Florida State,197,74,18,1,DB,Miami,FL,USA,25.7742658,-80.1936589,12086.0,['108808'],Jamari Howard,0.9495,4.0,110.0,cfbd_2024
+5079539,Elijah,Moore,Florida State,203,76,81,1,WR,Oxon Hill,MD,USA,38.8035961,-76.9896573,24033.0,['108870'],Elijah Moore,0.9285,4.0,172.0,cfbd_2024
+5079566,Charles,Lester III,Florida State,193,73,4,1,DB,Sarasota,FL,USA,27.3364347,-82.5306527,12115.0,['108752'],Charles Lester III,0.9748,4.0,54.0,cfbd_2024
+5079738,Landen,Thomas,Florida State,239,76,18,2,TE,Moultrie,GA,USA,31.179998,-83.7887928,13071.0,['108801'],Landen Thomas,0.951,4.0,103.0,cfbd_2024
+5081071,Christian,White,Florida State,172,71,37,3,DB,Ellenwood,GA,USA,33.6101096,-84.287978,13063.0,[],Christian White,0.9997,5.0,1.0,cfbd_2024
+5081075,Mac,Chiumento,Florida State,227,76,43,3,P,Daytona Beach,FL,USA,29.2108147,-81.0228331,12127.0,[],Mac Chiumento,0.9997,5.0,1.0,cfbd_2024
+5081368,Squirrel,White,Florida State,170,70,4,4,WR,Birmingham,AL,USA,33.5206824,-86.8024326,1073.0,[],Squirrel White,0.9,4.0,,transfer_portal
+5081391,Jayson,Jenkins,Florida State,270,78,97,3,DL,Bordentown,NJ,USA,40.1462213,-74.7118264,34005.0,['114732'],Jayson Jenkins,0.91,4.0,,transfer_portal
+5083703,Jarvis,Boatwright Jr.,Florida State,198,73,30,1,DB,Clearwater,FL,USA,27.9658533,-82.8001026,12103.0,['109228'],Jarvis Boatwright Jr.,0.85,3.0,,transfer_portal
+5084664,Cai,Bates,Florida State,196,74,14,1,DB,Orlando,FL,USA,28.5421109,-81.3790304,12095.0,['108790'],Cai Bates,0.9547,4.0,92.0,cfbd_2024
+5085388,Ja'Bril,Rawls,Florida State,185,73,11,2,DB,Pensacola,FL,USA,30.421309,-87.2169149,12033.0,[],Ja'Bril Rawls,0.9997,5.0,1.0,cfbd_2024
+5086096,Lawayne,McCoy,Florida State,184,73,7,2,WR,Miami,FL,USA,25.7742658,-80.1936589,12086.0,['108875'],Lawayne McCoy,0.9268,4.0,177.0,cfbd_2024
+5088153,Micahi,Danzy,Florida State,189,73,19,1,WR,Tallahassee,FL,USA,30.4380832,-84.2809332,12073.0,['108936'],Micahi Danzy,0.9149,4.0,238.0,cfbd_2024
+5092253,Peyton,Naylor,Florida State,199,70,60,2,LS,Tallahassee,FL,USA,30.4380832,-84.2809332,12073.0,[],Peyton Naylor,0.9997,5.0,1.0,cfbd_2024
+5110463,Manasse,Itete,Florida State,310,77,70,1,OL,Modesto,CA,USA,37.6390972,-120.9968782,6099.0,['109076'],Manasse Itete,0.8985,4.0,378.0,cfbd_2024
+5123219,Jake,Weinberg,Florida State,188,70,22,1,PK,Boynton Beach,FL,USA,26.5256179,-80.0666026,12099.0,['110896'],Jake Weinberg,0.8236,3.0,2220.0,cfbd_2024
+5128063,Ricky,Knight III,Florida State,177,72,26,1,DB,West Palm Beach,FL,USA,26.715364,-80.0532942,12099.0,['109059'],Ricky Knight III,0.9,4.0,361.0,cfbd_2024
+5139664,Jayden,Parrish,Florida State,223,73,36,1,LB,Delray Beach,FL,USA,26.4614625,-80.0728201,12099.0,['109398'],Jayden Parrish,0.8778,3.0,700.0,cfbd_2024
+5141360,Shamar,Arnoux,Florida State,192,74,15,1,DB,Fort Lauderdale,FL,USA,26.1223084,-80.1433786,12011.0,['106620'],Shamar Arnoux,0.9997,5.0,1.0,cfbd_2024
+5141560,Ousmane,Kromah,Florida State,214,73,32,1,RB,Leesburg,GA,USA,31.7324556,-84.1711966,13177.0,['106267'],Ousmane Kromah,0.9997,5.0,1.0,cfbd_2024
+5141642,Max,Redmon,Florida State,196,73,21,1,DB,West Palm Beach,FL,USA,26.715364,-80.0532942,12099.0,['107170'],Max Redmon,0.9997,5.0,1.0,cfbd_2024
+5141661,Kevin,Sperry,Florida State,212,73,9,1,QB,Denton,TX,USA,33.2150386,-97.1330516,48121.0,['106611'],Kevin Sperry,0.9997,5.0,1.0,cfbd_2024
+5141763,Amaree,Williams,Florida State,230,76,40,2,TE,North Palm Beach,FL,USA,26.8237944,-80.05592659756701,12099.0,['108907'],Amaree Williams,0.9201,4.0,209.0,cfbd_2024
+5145824,Chavez,Thompson,Florida State,303,73,52,1,OL,Cocoa,FL,USA,28.3553873,-80.7318827,12009.0,['107539'],Chavez Thompson,0.9997,5.0,1.0,cfbd_2024
+5146578,Josh,Raymond,Florida State,300,76,72,1,OL,Orlando,FL,USA,28.5421109,-81.3790304,12095.0,['109998'],Josh Raymond,0.85,3.0,,transfer_portal
+5146785,Tye,Hylton,Florida State,281,77,56,1,OL,Oviedo,FL,USA,28.6702526,-81.2084941,12117.0,[],Tye Hylton,0.8769,3.0,715.0,cfbd_2024
+5150835,Michael,Grant,Florida State,217,75,12,2,QB,Tallahassee,FL,USA,30.4380832,-84.2809332,12073.0,[],Michael Grant,0.9997,5.0,1.0,cfbd_2024
+5150836,Jaden,Jones,Florida State,253,77,44,4,DL,Montgomery,AL,USA,32.3669656,-86.3006485,1101.0,['183241'],Jaden Jones,0.9997,5.0,1.0,cfbd_2024
+5150837,Ashlynd,Barker,Florida State,216,75,27,3,DB,Columbus,GA,USA,32.4609764,-84.9877094,13215.0,[],Ashlynd Barker,0.9997,5.0,1.0,cfbd_2024
+5150840,Ashton,Bracewell,Florida State,225,75,52,2,LB,Palm Coast,FL,USA,29.5541432,-81.2207673,12035.0,[],Ashton Bracewell,0.9997,5.0,1.0,cfbd_2024
+5150841,Donny,Hiebert,Florida State,200,74,47,3,DB,Gainesville,FL,USA,29.6519684,-82.3249846,12001.0,[],Donny Hiebert,0.9997,5.0,1.0,cfbd_2024
+5150843,Brandon,Torres,Florida State,221,73,53,2,LB,Naples,FL,USA,26.1421976,-81.7942944,12021.0,[],Brandon Torres,0.9997,5.0,1.0,cfbd_2024
+5150844,Andre,Otto,Florida State,325,77,65,2,OL,Key West,FL,USA,24.5625566,-81.7724368,12087.0,['112026'],Andre Otto,0.9997,5.0,1.0,cfbd_2024
+5150848,Grant,Fielder,Florida State,235,74,98,2,DL,Smyrna,GA,USA,33.883887,-84.5147454,13067.0,[],Grant Fielder,0.9997,5.0,1.0,cfbd_2024
+5152839,Jaylen,King,Florida State,215,76,14,3,QB,Folkston,GA,USA,30.8305818,-82.0097846,13049.0,[],Jaylen King,0.84,3.0,,transfer_portal
+5155173,Kevin,Wynn,Florida State,343,74,55,1,DL,Greensboro,GA,USA,33.5756831,-83.1823789,13133.0,['106275'],Kevin Wynn,0.9997,5.0,1.0,cfbd_2024
+5155941,Jayden,Todd,Florida State,320,78,78,1,OL,Dublin,GA,USA,32.5404447,-82.903754,13175.0,[],Jayden Todd,0.9997,5.0,1.0,cfbd_2024
+5159497,James,Williams,Florida State,262,78,10,3,DL,Kansas City,MO,USA,39.100105,-94.5781416,29095.0,[],James Williams,0.92,4.0,,transfer_portal
+5164345,Chase,Loftin,Florida State,223,78,23,1,TE,Omaha,NE,USA,41.2587459,-95.9383758,31055.0,['106599'],Chase Loftin,0.9997,5.0,1.0,cfbd_2024
+5164350,Jayvan,Boggs,Florida State,204,73,15,1,WR,Cocoa,FL,USA,28.3553873,-80.7318827,12009.0,['106370'],Jayvan Boggs,0.9997,5.0,1.0,cfbd_2024
+5164657,Mario,Nash Jr.,Florida State,270,76,63,1,OL,De Kalb,MS,USA,32.767633,-88.6508784,28069.0,['106605'],Mario Nash Jr.,0.9997,5.0,1.0,cfbd_2024
+5167701,Darryll,Desir,Florida State,261,77,90,1,DL,Miami,FL,USA,25.7742658,-80.1936589,12086.0,['106580'],Darryll Desir,0.9997,5.0,1.0,cfbd_2024
+5167703,Mandrell,Desir,Florida State,265,76,93,1,DL,Miami,FL,USA,25.7742658,-80.1936589,12086.0,[],Mandrell Desir,0.9997,5.0,1.0,cfbd_2024
+5167708,Tylon,Lee,Florida State,277,76,96,1,DL,Pace,FL,USA,29.607689,-81.9307201,12107.0,['106414'],Tylon Lee,0.9997,5.0,1.0,cfbd_2024
+5195290,Chastan,Brown,Florida State,265,80,54,1,OL,Warner Robins,GA,USA,32.6200973,-83.606568,13153.0,['106650'],Chastan Brown,0.9997,5.0,1.0,cfbd_2024
+5195291,Jesse,Harrold,Florida State,247,77,94,1,DL,Tampa,FL,USA,27.9477595,-82.458444,12057.0,[],Jesse Harrold,0.9997,5.0,1.0,cfbd_2024
+5198289,Tae'Shaun,Gelsey,Florida State,235,76,83,1,WR,Jacksonville,FL,USA,30.3321838,-81.655651,12031.0,[],Tae'Shaun Gelsey,0.9997,5.0,1.0,cfbd_2024
+5209709,Teriq,Mallory,Florida State,208,77,82,1,WR,New Haven,CT,USA,41.3082138,-72.9250518,9009.0,[],Teriq Mallory,0.9997,5.0,1.0,cfbd_2024
+5216568,Sean,Poret,Florida State,285,77,75,1,OL,Sandy Springs,GA,USA,33.9242688,-84.3785379,13121.0,[],Sean Poret,0.9997,5.0,1.0,cfbd_2024
+5216791,Brunno,Reus,Florida State,202,72,42,1,P,Sarasota,FL,USA,27.3364347,-82.5306527,12115.0,['108525'],Brunno Reus,0.9997,5.0,1.0,cfbd_2024
+5218242,Zay,Parks,Florida State,196,71,21,1,RB,Crestview,FL,USA,30.7621326,-86.5705084,12091.0,[],Zay Parks,0.9997,5.0,1.0,cfbd_2024
+5218243,Jeremiah,Johnson,Florida State,207,71,30,1,RB,Tallahassee,FL,USA,30.4380832,-84.2809332,12073.0,[],Jeremiah Johnson,0.9997,5.0,1.0,cfbd_2024
+5218244,Gav,Holman,Florida State,233,73,43,1,LB,Uniondale,NY,USA,40.7031115,-73.5895167364443,36059.0,[],Gav Holman,0.9997,5.0,1.0,cfbd_2024
+5218246,Luke,Douglas,Florida State,231,77,45,1,TE,Jupiter,FL,USA,26.9260832,-80.12108914060954,12099.0,[],Luke Douglas,0.9997,5.0,1.0,cfbd_2024
+5218249,Willy,Suarez,Florida State,191,70,85,1,WR,Tampa,FL,USA,27.9477595,-82.458444,12057.0,[],Willy Suarez,0.9997,5.0,1.0,cfbd_2024
+5222701,Antonio,Cromartie Jr.,Florida State,185,72,33,1,DB,Atlanta,GA,USA,33.7490987,-84.3901849,13121.0,['108278'],Antonio Cromartie Jr.,0.9997,5.0,1.0,cfbd_2024
+5294070,Gavin,Markey,Florida State,235,72,16,1,QB,Athens,GA,USA,33.9597677,-83.376398,13059.0,[],Gavin Markey,0.9997,5.0,1.0,cfbd_2024
+5294071,Zae,Thomas,Florida State,189,75,22,1,DB,Fort Lauderdale,FL,USA,26.1223084,-80.1433786,12011.0,['106532'],Zae Thomas,0.9997,5.0,1.0,cfbd_2024
+5294072,Ethan,Pritchard,Florida State,219,74,35,1,LB,Sanford,FL,USA,28.8117297,-81.2680345,12117.0,['106697'],Ethan Pritchard,0.9997,5.0,1.0,cfbd_2024
+5294073,Ethan,Post,Florida State,235,75,38,1,P,Rochester,MN,USA,44.0234387,-92.4630182,27109.0,[],Ethan Post,0.9997,5.0,1.0,cfbd_2024
+5294074,Alex,Nocco,Florida State,190,74,53,1,LS,Tampa,FL,USA,27.9477595,-82.458444,12057.0,[],Alex Nocco,0.9997,5.0,1.0,cfbd_2024
+5294075,Ja'Elyne,Matthews,Florida State,344,78,71,1,OL,Toms River,NJ,USA,39.9537359,-74.1979576,34029.0,[],Ja'Elyne Matthews,0.86,3.0,,transfer_portal
+5294076,Greyson,Labiad,Florida State,250,75,89,3,TE,Celebration,FL,USA,29.62309225,-82.39622162575895,12001.0,[],Greyson Labiad,0.9997,5.0,1.0,cfbd_2024
+5294077,Tyeland,Coleman,Florida State,301,76,91,3,DL,Terry,MS,USA,32.0962633,-90.2942566,28049.0,['182940'],Tyeland Coleman,0.9997,5.0,1.0,cfbd_2024
