@@ -291,7 +291,7 @@ for name, nil_val in known_nil.items():
 # global position ceilings - model inflates values, these are realistic market caps
 # based on On3 market data and FSU's actual budget constraints
 position_ceilings = {
-    'QB': 2000000, 'WR': 1200000, 'DL': 800000,
+    'QB': 1500000, 'WR': 1200000, 'DL': 800000,
     'OL': 700000, 'DB': 700000, 'RB': 600000,
     'TE': 500000, 'ATH': 400000
 }

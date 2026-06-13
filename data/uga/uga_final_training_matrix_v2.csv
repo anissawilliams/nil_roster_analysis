@@ -1,0 +1,133 @@
+id,firstName,lastName,team,weight,height,jersey,year,position,homeCity,homeState,homeCountry,homeLatitude,homeLongitude,homeCountyFIPS,recruitIds,Player,recruiting_rating,recruiting_stars,recruiting_rank,source
+4432738,Micah,Morris,Georgia,330,76,56,4,OL,Kingsland,GA,USA,30.7999563,-81.6898261,13039.0,['115808'],Micah Morris,0.9698,4.0,67.0,cfbd_2021
+4682640,Josh,McCray,Georgia,235,73,2,4,RB,Enterprise,AL,USA,31.3151708,-85.8552161,1031.0,['117079'],Josh McCray,0.89,3.0,,transfer_portal
+4685282,Zion,Branch,Georgia,210,74,2,3,S,Las Vegas,NV,USA,36.1672559,-115.1485163,32003.0,[],Zion Branch,0.87,3.0,,transfer_portal
+4685327,Daylen,Everette,Georgia,190,73,6,4,DB,Norfolk,VA,USA,36.8462923,-76.2929252,51710.0,['113571'],Daylen Everette,0.9874,5.0,28.0,cfbd_2022
+4685360,Earnest,Greene III,Georgia,320,76,71,3,OL,Los Angeles,CA,USA,34.0536909,-118.2427666,6037.0,['113588'],Earnest Greene III,,,,not_found
+4685479,Christen,Miller,Georgia,305,76,52,3,DL,Ellenwood,GA,USA,33.6101096,-84.287978,13063.0,[],Christen Miller,0.956,4.0,103.0,cfbd_2022
+4685578,Gunner,Stockton,Georgia,215,73,14,3,QB,Tiger,GA,USA,34.8470372,-83.4329399,13241.0,['113667'],Gunner Stockton,0.9506,4.0,124.0,cfbd_2022
+4696723,Beau,Gardner,Georgia,250,77,60,4,LS,San Francisco,CA,USA,37.7790262,-122.4199061,6075.0,['121276'],Beau Gardner,0.8,3.0,2819.0,cfbd_2020
+4699065,Kavon,Townsend,Georgia,215,73,35,4,WR,Conroe,TX,USA,30.3118769,-95.4560512,48339.0,[],Kavon Townsend,,,,not_found
+4702559,Oscar,Delp,Georgia,245,77,4,4,TE,Cumming,GA,USA,34.2073196,-84.1401926,13117.0,['113643'],Oscar Delp,0.9577,4.0,100.0,cfbd_2022
+4702581,JaCorey,Thomas,Georgia,205,72,20,4,DB,Orlando,FL,USA,28.5421109,-81.3790304,12095.0,[],JaCorey Thomas,0.9,4.0,311.0,cfbd_2022
+4712579,Dillon,Bell,Georgia,210,73,86,4,WR,Houston,TX,USA,29.7589382,-95.3676974,48201.0,['113997'],Dillon Bell,0.887,3.0,452.0,cfbd_2022
+4718457,Noah,Thomas,Georgia,205,77,5,4,WR,League City,TX,USA,29.5074538,-95.0949303,48167.0,[],Noah Thomas,0.93,4.0,,transfer_portal
+4799994,Brett,Thorson,Georgia,235,74,92,4,P,Melbourne,VIC,Australia,,,,['115247'],Brett Thorson,0.8293,3.0,1733.0,cfbd_2022
+4838555,Miles,Thornton,Georgia,200,72,39,3,WR,Tyrone,GA,USA,33.4713249,-84.5972005,13113.0,[],Miles Thornton,,,,not_found
+4838684,Patrick,Hester,Georgia,260,77,44,3,TE,Johns Creek,GA,USA,34.0181557,-84.190196,13121.0,[],Patrick Hester,,,,not_found
+4870588,Joenel,Aguero,Georgia,205,71,8,3,DB,Lynn,MA,USA,42.466763,-70.9494939,25009.0,['111283'],Joenel Aguero,0.982,4.0,37.0,cfbd_2023
+4870598,CJ,Allen,Georgia,235,73,3,3,LB,Barnesville,GA,USA,33.0545709,-84.1557496,13171.0,['111316'],CJ Allen,0.8256,3.0,2165.0,cfbd_2024
+4870612,Zachariah,Branch,Georgia,180,70,1,3,WR,Las Vegas,NV,USA,36.1672559,-115.1485163,32003.0,['113601'],Zachariah Branch,0.95,4.0,,transfer_portal
+4870694,Monroe,Freeling,Georgia,315,79,57,3,OL,Isle Of Palms,SC,USA,,,,['111281'],Monroe Freeling,0.9822,4.0,35.0,cfbd_2023
+4870716,Gabe,Harris Jr.,Georgia,260,76,0,3,LB,Thomasville,GA,USA,30.8365815,-83.9787808,13275.0,['111311'],Gabe Harris Jr.,,,,not_found
+4870749,Bo,Hughley,Georgia,295,79,55,2,OL,Fairburn,GA,USA,33.5670562,-84.5810418,13121.0,['111361'],Bo Hughley,0.9457,4.0,115.0,cfbd_2023
+4870753,Daniel,Harris,Georgia,195,75,7,3,DB,Miami,FL,USA,25.7742658,-80.1936589,12086.0,['111404'],Daniel Harris,0.9347,4.0,158.0,cfbd_2023
+4870779,Jordan,Hall,Georgia,320,76,44,3,DL,Jacksonville,FL,USA,30.3321838,-81.655651,12031.0,['111280'],Jordan Hall,0.9824,4.0,34.0,cfbd_2023
+4870822,Josh,Horton,Georgia,295,76,81,2,DT,Fairburn,GA,USA,33.5670562,-84.5810418,13121.0,['113915'],Josh Horton,0.87,3.0,,transfer_portal
+4870874,Lawson,Luckie,Georgia,240,76,7,3,TE,Norcross,GA,USA,33.9412127,-84.2135309,13135.0,['111399'],Lawson Luckie,0.9361,4.0,153.0,cfbd_2023
+4870896,Xzavier,McLeod,Georgia,315,76,94,2,DL,Camden,SC,USA,34.2465393,-80.6070238,45055.0,['111436'],Xzavier McLeod,0.9261,4.0,190.0,cfbd_2023
+4871074,Raylen,Wilson,Georgia,235,73,5,3,LB,Tallahassee,FL,USA,30.4380832,-84.2809332,12073.0,['111272'],Raylen Wilson,0.9846,5.0,26.0,cfbd_2023
+4880453,Cole,Speer,Georgia,185,71,83,4,WR,Calhoun,GA,USA,34.502587,-84.9510542,13129.0,[],Cole Speer,0.8722,3.0,731.0,cfbd_2022
+4880985,Terrell,Foster,Georgia,220,73,30,3,LB,Kennesaw,GA,USA,34.0234337,-84.6154897,13067.0,[],Terrell Foster,,,,not_found
+4881826,Cash,Jones,Georgia,182,72,32,4,RB,Brock,TX,USA,32.6762432,-97.9408718,48367.0,['118418'],Cash Jones,0.8285,3.0,1795.0,cfbd_2021
+4896304,Drew,Bobo,Georgia,305,77,74,3,OL,Auburn,AL,USA,32.6550905,-85.50364346309962,1081.0,[],Drew Bobo,0.8748,3.0,663.0,cfbd_2022
+4899136,Micah,Bell,Georgia,185,70,26,2,RB,Houston,TX,USA,29.7589382,-95.3676974,48201.0,['111483'],Micah Bell,0.83,3.0,,transfer_portal
+4901380,Jaden,Harris,Georgia,200,72,12,3,S,Atlanta,GA,USA,33.7490987,-84.3901849,13121.0,['114083'],Jaden Harris,0.86,3.0,,transfer_portal
+4914220,Henry,Bates,Georgia,190,71,94,3,PK,Waycross,GA,USA,31.2135511,-82.3540178,13299.0,[],Henry Bates,,,,not_found
+4918110,Roderick,Robinson II,Georgia,235,73,0,2,RB,Imperial,CA,USA,32.8475529,-115.5694391,6025.0,['111425'],Roderick Robinson II,0.9291,4.0,179.0,cfbd_2023
+4921440,Jamal,Meriweather,Georgia,305,79,72,2,OL,Brunswick,GA,USA,31.1499528,-81.4914894,13127.0,['111727'],Jamal Meriweather,0.8879,3.0,481.0,cfbd_2023
+5077226,Peyton,Woodring,Georgia,185,70,91,3,PK,Lafayette,LA,USA,30.2240897,-92.0198427,22055.0,['113060'],Peyton Woodring,0.8333,3.0,1827.0,cfbd_2023
+5078453,London,Humphreys,Georgia,200,74,16,3,WR,Nashville,TN,USA,36.1622296,-86.7743531,47037.0,['111734'],London Humphreys,0.8876,3.0,488.0,cfbd_2023
+5079334,KJ,Bolden,Georgia,185,72,4,2,DB,Buford,GA,USA,34.1206564,-84.0043513,13135.0,['108711'],KJ Bolden,0.994,5.0,13.0,cfbd_2024
+5079335,Chauncey,Bowens,Georgia,225,71,33,1,RB,Port Saint Lucie,FL,USA,27.2939333,-80.3503283,12111.0,['108923'],Chauncey Bowens,0.9174,4.0,225.0,cfbd_2024
+5079366,Daniel,Calhoun,Georgia,325,78,75,1,OL,Marietta,GA,USA,33.9528472,-84.5496148,13067.0,['108811'],Daniel Calhoun,0.9491,4.0,113.0,cfbd_2024
+5079397,Waltclaire,Flynn Jr.,Georgia,304,74,54,1,OL,Grayson,GA,USA,33.8942729,-83.95574,13135.0,['109083'],Waltclaire Flynn Jr.,0.86,3.0,,transfer_portal
+5079423,Justin,Greene,Georgia,275,76,91,1,DE,Dacula,GA,USA,33.9887165,-83.8979573,13135.0,['108882'],Justin Greene,0.9255,4.0,184.0,cfbd_2024
+5079477,Kris,Jones,Georgia,230,74,28,1,LB,Stafford,VA,USA,38.4222681,-77.4084067,51179.0,['108830'],Kris Jones,0.9405,4.0,132.0,cfbd_2024
+5079561,Dwight,Phillips Jr.,Georgia,175,70,20,2,RB,Mableton,GA,USA,33.8188333,-84.5822632,13067.0,['108941'],Dwight Phillips Jr.,0.9147,4.0,243.0,cfbd_2024
+5079609,Malachi,Toliver,Georgia,320,77,51,1,OL,Cartersville,GA,USA,34.1650972,-84.7999383,13015.0,[],Malachi Toliver,0.8642,3.0,1094.0,cfbd_2024
+5079617,Michael,Uini,Georgia,325,79,52,1,OL,Kempner,TX,USA,,,,['108792'],Michael Uini,0.9534,4.0,94.0,cfbd_2024
+5079679,Ryan,Puglisi,Georgia,210,75,12,1,QB,Paxton,MA,USA,42.3122967,-71.934172,25027.0,['108812'],Ryan Puglisi,0.9487,4.0,114.0,cfbd_2024
+5079698,Ellis,Robinson IV,Georgia,180,72,1,1,DB,New Haven,CT,USA,41.3082138,-72.9250518,9009.0,['108700'],Ellis Robinson IV,0.9994,5.0,2.0,cfbd_2024
+5079721,Jordan,Thomas,Georgia,315,77,92,1,DL,Hackensack,NJ,USA,40.8871438,-74.0410865,34003.0,['108818'],Jordan Thomas,0.9472,4.0,123.0,cfbd_2026
+5079767,Justin,Williams,Georgia,220,74,19,2,LB,Conroe,TX,USA,30.3118769,-95.4560512,48339.0,"['108703', '111341']",Justin Williams,0.9339,4.0,157.0,cfbd_2026
+5081059,Luke,Bennett,Georgia,175,71,29,3,WR,Blackshear,GA,USA,31.3060513,-82.2420661,13229.0,[],Luke Bennett,,,,not_found
+5081061,Jacob,Fleming,Georgia,190,71,35,3,S,Atlanta,GA,USA,33.7490987,-84.3901849,13121.0,[],Jacob Fleming,,,,not_found
+5081065,Denton,Shamburger,Georgia,200,72,41,3,DB,Atlanta,GA,USA,33.7490987,-84.3901849,13121.0,[],Denton Shamburger,,,,not_found
+5081066,Jacob,Hardie,Georgia,180,69,45,3,RB,Olney,MD,USA,39.1532123,-77.0668408,24031.0,[],Jacob Hardie,,,,not_found
+5081067,Cooper,Johnson,Georgia,225,76,48,3,TE,Cumming,GA,USA,34.2073196,-84.1401926,13117.0,[],Cooper Johnson,,,,not_found
+5084046,Ondre,Evans,Georgia,195,72,23,1,DB,Franklin,TN,USA,35.925193,-86.8689365,47187.0,"['108783', '111441']",Ondre Evans,0.9566,4.0,85.0,cfbd_2024
+5084047,Nate,Frazier,Georgia,210,70,3,2,RB,Compton,CA,USA,33.894927,-118.226624,6037.0,['108747'],Nate Frazier,0.9777,4.0,49.0,cfbd_2024
+5089023,Adrian,Maddox,Georgia,200,73,14,4,S,Conyers,GA,USA,33.6676103,-84.0176904,13247.0,[],Adrian Maddox,0.86,3.0,,transfer_portal
+5092508,Colbie,Young,Georgia,215,75,8,4,WR,Binghamton,NY,USA,42.096968,-75.914341,36007.0,['183484'],Colbie Young,,,,not_found
+5093031,Gannon,Hearst,Georgia,200,72,30,3,RB,Johns Creek,GA,USA,34.0181557,-84.190196,13121.0,[],Gannon Hearst,,,,not_found
+5104150,Kyron,Jones,Georgia,205,72,31,2,DB,Charlotte,NC,USA,35.2272,-80.843083,37119.0,['113567'],Kyron Jones,0.8772,3.0,667.0,cfbd_2023
+5105269,Sacovie,White-Helton,Georgia,180,69,18,1,WR,Cartersville,GA,USA,34.1650972,-84.7999383,13015.0,['109140'],Sacovie White-Helton,,,,not_found
+5122447,Demello,Jones,Georgia,185,73,15,2,DB,Swainsboro,GA,USA,32.5973857,-82.3337376,13107.0,['108748'],Demello Jones,0.9763,4.0,50.0,cfbd_2024
+5130409,Colton,Heinrich,Georgia,235,76,82,1,TE,Coral Springs,FL,USA,26.26485615,-80.26534203798758,12011.0,['109336'],Colton Heinrich,0.8808,3.0,641.0,cfbd_2024
+5138756,Joseph,Jonah-Ajonye,Georgia,275,76,99,1,DL,Shenandoah,TX,USA,,,,['108723'],Joseph Jonah-Ajonye,0.9881,5.0,25.0,cfbd_2024
+5139097,Nyier,Daniels,Georgia,345,80,79,1,OL,Newark,NJ,USA,40.735657,-74.1723667,34013.0,['108969'],Nyier Daniels,0.91,4.0,271.0,cfbd_2024
+5141371,Ethan,Barbour,Georgia,235,75,9,1,TE,Alpharetta,GA,USA,34.0709576,-84.2747329,13121.0,['106360'],Ethan Barbour,0.9306,4.0,169.0,cfbd_2025
+5141457,Juan,Gaston,Georgia,360,79,73,1,OL,Atlanta,GA,USA,33.7490987,-84.3901849,13121.0,['106243'],Juan Gaston,0.974,4.0,52.0,cfbd_2025
+5141463,Jontae,Gilbert,Georgia,188,73,18,1,DB,Atlanta,GA,USA,33.7490987,-84.3901849,13121.0,['106421'],Jontae Gilbert,0.9175,4.0,230.0,cfbd_2025
+5141464,Elijah,Griffin,Georgia,310,76,90,1,DL,Pooler,GA,USA,32.1158983,-81.2495131,13051.0,['106194'],Elijah Griffin,0.9992,5.0,3.0,cfbd_2025
+5141474,Dontrell,Glover,Georgia,320,75,63,1,OL,Fairburn,GA,USA,33.5670562,-84.5810418,13121.0,[],Dontrell Glover,0.9025,4.0,320.0,cfbd_2025
+5141602,Ryan,Montgomery,Georgia,215,75,15,1,QB,Findlay,OH,USA,41.0413873,-83.6503982,39063.0,['106323'],Ryan Montgomery,0.9408,4.0,132.0,cfbd_2025
+5141671,Talyn,Taylor,Georgia,190,72,11,1,WR,Geneva,IL,USA,41.8875281,-88.3053525,17089.0,['106211'],Talyn Taylor,0.9877,5.0,20.0,cfbd_2025
+5141681,Mason,Short,Georgia,310,78,75,1,OL,Evans,GA,USA,33.5143065,-82.1387819734912,13073.0,['106441'],Mason Short,0.9137,4.0,250.0,cfbd_2025
+5141699,Cortez,Smith,Georgia,320,75,50,1,OL,Lilburn,GA,USA,33.8901036,-84.1429719,13135.0,['106349'],Cortez Smith,0.9331,4.0,158.0,cfbd_2025
+5141739,Zayden,Walker,Georgia,212,73,10,1,LB,Ellaville,GA,USA,32.2382139,-84.3090798,13249.0,['106215'],Zayden Walker,0.9871,5.0,24.0,cfbd_2025
+5141749,CJ,Wiley,Georgia,210,76,6,1,WR,Baton Rouge,LA,USA,30.4459596,-91.18738,22033.0,['106282'],CJ Wiley,0.953,4.0,91.0,cfbd_2025
+5141756,Elyiss,Williams,Georgia,255,78,10,1,TE,Kingsland,GA,USA,30.7999563,-81.6898261,13039.0,['106220'],Elyiss Williams,0.9854,5.0,29.0,cfbd_2025
+5142602,Rasean,Dinkins,Georgia,190,71,27,1,S,Warner Robins,GA,USA,32.6200973,-83.606568,13153.0,[],Rasean Dinkins,0.8988,4.0,362.0,cfbd_2025
+5142611,Isaiah,Gibson,Georgia,255,76,29,1,DE,Warner Robins,GA,USA,32.6200973,-83.606568,13153.0,['106200'],Isaiah Gibson,0.9962,5.0,9.0,cfbd_2025
+5145410,Chris,Cole,Georgia,235,75,9,2,LB,Salem,VA,USA,37.293378,-80.054667,51775.0,['108727'],Chris Cole,0.9866,5.0,29.0,cfbd_2024
+5145507,Drew,Miller,Georgia,210,74,90,2,P,Mediapolis,IA,USA,41.008076,-91.1633978,19057.0,['110607'],Drew Miller,0.8367,3.0,1929.0,cfbd_2024
+5145652,Marcus,Harrison,Georgia,330,80,76,1,OL,Buffalo,NY,USA,42.8867166,-78.8783922,36029.0,['109067'],Marcus Harrison,0.8989,4.0,369.0,cfbd_2024
+5146895,Nnamdi,Ogboko,Georgia,340,76,95,1,DL,Durham,NC,USA,35.996653,-78.9018053,37063.0,['109448'],Nnamdi Ogboko,0.8756,3.0,752.0,cfbd_2024
+5146897,Quintavius,Johnson,Georgia,255,76,33,2,LB,Atlanta,GA,USA,33.7490987,-84.3901849,13121.0,['109064'],Quintavius Johnson,0.8991,4.0,366.0,cfbd_2024
+5146898,Nasir,Johnson,Georgia,340,78,88,1,DL,Dublin,GA,USA,32.5404447,-82.903754,13175.0,['108806'],Nasir Johnson,0.9496,4.0,108.0,cfbd_2024
+5149473,Thomas,Blackshear,Georgia,200,73,88,1,WR,Savannah,GA,USA,32.0809263,-81.0911768,13051.0,[],Thomas Blackshear,0.9137,4.0,249.0,cfbd_2025
+5150308,Elo,Modozie,Georgia,248,76,18,3,LB,Saint Augustine,FL,USA,29.8946952,-81.3145395,12109.0,[],Elo Modozie,0.92,4.0,,transfer_portal
+5150381,Will,Snellings,Georgia,220,74,51,2,LS,Fayetteville,GA,USA,33.4487257,-84.4549262,13113.0,[],Will Snellings,,,,not_found
+5150383,David,Lalaian,Georgia,225,74,41,2,TE,Monroe,GA,USA,33.7948364,-83.713229,13297.0,[],David Lalaian,,,,not_found
+5150384,Liam,Badger,Georgia,195,72,92,4,PK,Cumming,GA,USA,34.2073196,-84.1401926,13117.0,[],Liam Badger,,,,not_found
+5150831,Jeremy,Bell,Georgia,175,72,81,1,WR,Homerville,GA,USA,31.0365983,-82.7470849,13065.0,[],Jeremy Bell,,,,not_found
+5160173,Walter,Blanchard,Georgia,195,73,28,2,WR,Columbus,GA,USA,32.4609764,-84.9877094,13215.0,[],Walter Blanchard,,,,not_found
+5160174,Marek,Briley,Georgia,205,75,43,2,WR,Buford,GA,USA,34.1206564,-84.0043513,13135.0,[],Marek Briley,,,,not_found
+5160175,Ali,Hall,Georgia,201,73,43,4,DB,Jacksonville,FL,USA,30.3321838,-81.655651,12031.0,[],Ali Hall,,,,not_found
+5160176,Will,Taylor,Georgia,195,74,47,2,WR,Milton,GA,USA,34.1321631,-84.300666,13121.0,[],Will Taylor,0.8489,3.0,1227.0,cfbd_2021
+5160177,Henry,Peagler,Georgia,290,75,60,2,OL,Blackshear,GA,USA,31.3060513,-82.2420661,13229.0,[],Henry Peagler,,,,not_found
+5160178,Clinton,Barlow,Georgia,321,77,67,2,DL,Charlotte,NC,USA,35.2272,-80.843083,37119.0,[],Clinton Barlow,,,,not_found
+5172095,Bo,Walker,Georgia,210,69,24,1,RB,Ellenwood,GA,USA,33.6101096,-84.287978,13063.0,['106515'],Bo Walker,0.9021,4.0,324.0,cfbd_2025
+5195293,Darren,Ikinnagbon,Georgia,255,77,11,1,LB,Hillside,NJ,USA,40.701213,-74.2301459,34039.0,['106285'],Darren Ikinnagbon,0.9521,4.0,94.0,cfbd_2025
+5208133,Dominick,Kelly,Georgia,190,73,24,1,DB,St. Petersburg,FL,USA,27.7703796,-82.6695085,12103.0,['106566'],Dominick Kelly,0.8975,4.0,373.0,cfbd_2025
+5209009,JJ,Hanne,Georgia,290,76,96,1,DL,Berlin,,Germany,,,,[],JJ Hanne,0.8778,3.0,700.0,cfbd_2025
+5209177,Todd,Robinson,Georgia,205,71,22,1,S,Valdosta,GA,USA,30.8327022,-83.2784851,13185.0,['106398'],Todd Robinson,0.9225,4.0,207.0,cfbd_2025
+5210161,AJ,Kruah,Georgia,225,73,13,1,LB,Philadelphia,PA,USA,39.9527237,-75.1635262,42101.0,[],AJ Kruah,,,,not_found
+5212631,Chase,Linton,Georgia,225,75,85,1,LB,Atlanta,GA,USA,33.7490987,-84.3901849,13121.0,['106309'],Chase Linton,0.9445,4.0,118.0,cfbd_2025
+5212701,Daniel,Okonkwo,Georgia,205,72,26,1,S,Powder Springs,GA,USA,33.8595492,-84.683824,13067.0,[],Daniel Okonkwo,0.88,3.0,644.0,cfbd_2025
+5215017,Landon,Roldan,Georgia,185,72,84,1,WR,Bogart,GA,USA,33.949281,-83.534608,13219.0,['106496'],Landon Roldan,0.9049,4.0,305.0,cfbd_2025
+5217771,Dennis,Uzochukwu,Georgia,300,77,65,1,OL,Lawrenceville,GA,USA,33.9562149,-83.9879625,13135.0,['106485'],Dennis Uzochukwu,0.9063,4.0,294.0,cfbd_2025
+5218580,Maurice,Hayes,Georgia,180,73,16,1,CB,Perry,GA,USA,32.4586695,-83.7319658,13153.0,[],Maurice Hayes,0.8478,3.0,1634.0,cfbd_2024
+5218581,Colter,Ginn,Georgia,203,75,17,1,QB,Perry,GA,USA,32.4586695,-83.7319658,13153.0,[],Colter Ginn,,,,not_found
+5218582,Jaden,Reddell,Georgia,240,76,23,1,TE,Raymore,MO,USA,38.810131,-94.4676501,29037.0,['108767'],Jaden Reddell,0.9678,4.0,69.0,cfbd_2024
+5218583,Wade,Penn,Georgia,200,70,31,1,RB,Atlanta,GA,USA,33.7490987,-84.3901849,13121.0,[],Wade Penn,,,,not_found
+5218586,Henry,Waller,Georgia,170,71,37,3,DB,Evans,GA,USA,33.5143065,-82.1387819734912,13073.0,[],Henry Waller,,,,not_found
+5218587,Brandon,Mathis,Georgia,215,72,38,3,RB,Fayetteville,GA,USA,33.4487257,-84.4549262,13113.0,[],Brandon Mathis,,,,not_found
+5218588,Danny,Curran,Georgia,190,73,46,3,WR,Marietta,GA,USA,33.9528472,-84.5496148,13067.0,[],Danny Curran,,,,not_found
+5218590,Jahzare,Jackson,Georgia,348,82,64,2,OL,San Diego,CA,USA,32.7174209,-117.1627714,6073.0,[],Jahzare Jackson,0.8678,3.0,982.0,cfbd_2024
+5218591,Tate,Nelms,Georgia,283,75,78,1,OL,Woodstock,GA,USA,34.1014112,-84.5192192,13057.0,[],Tate Nelms,,,,not_found
+5218592,Henry,Delp,Georgia,205,74,89,1,TE,Cumming,GA,USA,34.2073196,-84.1401926,13117.0,[],Henry Delp,,,,not_found
+5229348,Hezekiah,Millender,Georgia,205,75,19,1,QB,Goodyear,AZ,USA,33.4353672,-112.3576005,4013.0,[],Hezekiah Millender,0.8753,3.0,763.0,cfbd_2025
+5258446,London,Seymour,Georgia,305,76,55,1,DT,Suwanee,GA,USA,34.0514898,-84.0712997,13135.0,[],London Seymour,,,,not_found
+5293621,Jaylan,Morgan,Georgia,195,72,17,1,DB,Murfreesboro,TN,USA,35.845999,-86.3920452,47149.0,['106464'],Jaylan Morgan,0.9103,4.0,273.0,cfbd_2025
+5293623,Eli,Barrow,Georgia,212,70,53,2,LB,Cedartown,GA,USA,34.0124425,-85.2559398,13233.0,[],Eli Barrow,,,,not_found
+5293624,Carter,Horton,Georgia,210,78,93,2,P,Perry,GA,USA,32.4586695,-83.7319658,13153.0,[],Carter Horton,,,,not_found
+5297763,Tyler,Williams,Georgia,205,74,13,1,WR,Tampa,FL,USA,27.9477595,-82.458444,12057.0,[],Tyler Williams,0.8917,4.0,454.0,cfbd_2025
+5306295,Duncan,Carpenter,Georgia,225,75,48,1,LB,Dalton,GA,USA,34.7691867,-84.9702475,13313.0,[],Duncan Carpenter,,,,not_found
+5306297,Connor,Ferguson,Georgia,155,69,98,1,PK,Savannah,GA,USA,32.0809263,-81.0911768,13051.0,[],Connor Ferguson,,,,not_found
+5306312,Clayton,Hood,Georgia,210,74,47,1,LB,Swainsboro,GA,USA,32.5973857,-82.3337376,13107.0,[],Clayton Hood,,,,not_found
+5306313,Cole,Jones,Georgia,210,73,38,1,LB,Albany,GA,USA,31.5782062,-84.1556809,13095.0,[],Cole Jones,,,,not_found
+5306314,Benjamin,McElreath,Georgia,175,71,37,1,WR,Macon,GA,USA,32.8406946,-83.6324022,13021.0,[],Benjamin McElreath,,,,not_found
+5306316,Jackson,St. Clair,Georgia,165,69,36,1,WR,Perry,GA,USA,32.4586695,-83.7319658,13153.0,[],Jackson St. Clair,,,,not_found

@@ -18,11 +18,9 @@ YEAR_TARGET = 2025
 TARGET_TEAM = 'Georgia'
 TEAM_SLUG   = 'uga'
 
-# -----------------------------------------------
-# LOAD DATA
-# -----------------------------------------------
+### TRAINING DATA LOADING ###
 
-# nil_data is the full 106-player training set from On3
+# nil_data is the full 106-player TRAINING set from On3
 df_nil_data = pd.read_csv("data/training/nil_data.csv")
 
 # recruiting ranks pulled from CFBD + manual overrides
@@ -31,50 +29,26 @@ df_recruiting = pd.read_csv("data/training/nil_recruiting_ranks_raw.csv")
 # manual overrides - players we looked up manually bc CFBD didn't find them
 # format: Player, recruiting_stars, recruiting_rating
 df_overrides = pd.read_csv("data/training/manual_recruiting_overrides.csv")
-#df_overrides.columns = df_overrides.columns.str.strip().str.title() #where upper/lower case mismatches
+df_overrides.columns = df_overrides.columns.str.strip().str.title()
+df_overrides = df_overrides.rename(columns={'Recruiting_Rating': 'recruiting_rating', 'Recruiting_Stars': 'recruiting_stars'})
 # fsu roster and supporting files
 df_roster = pd.read_csv(f"data/uga/uga_roster_{YEAR_TARGET}.csv")
-df_depth  = pd.read_csv(f"data/uga/uga_depth_chart_{YEAR_TARGET}.csv")
-df_fsu_nil = pd.read_csv(f"data/uga/uga_nil_on3_raw.csv")
+df_depth  = pd.read_csv(f"data/uga/uga_depth_chart_{YEAR_TARGET}.csv", on_bad_lines='skip')
+df_uga_nil = pd.read_csv(f"data/uga/uga_nil_on3_raw.csv")
 df_impute = pd.read_csv("data/training/social_impute.csv")
 
 # fsu recruiting ranks - for inference
-df_fsu_recruiting = pd.read_csv("data/fsu/fsu_recruiting_ranks_raw.csv")
+df_uga_recruiting = pd.read_csv("data/uga/uga_recruiting_ranks_raw.csv")
 
 print(f"nil_data players: {len(df_nil_data)}")
 print(f"recruiting ranks matched: {df_recruiting['match_found'].sum()}")
 print(f"manual overrides: {len(df_overrides)}")
 
-# -----------------------------------------------
-# BUILD TRAINING MATRIX
-# -----------------------------------------------
+print(df_depth.head())
+print(df_depth.columns.tolist())
 
-# apply manual overrides to recruiting ranks
-# just loop through and update - yes this is slow, its fine
-for _, override in df_overrides.iterrows():
-    name = override['Player']
-    mask = df_recruiting['Player'] == name
-    if mask.any():
-        # update existing row
-        df_recruiting.loc[mask, 'recruiting_rating'] = override['recruiting_rating']
-        df_recruiting.loc[mask, 'recruiting_stars'] = override['recruiting_stars']
-        df_recruiting.loc[mask, 'match_found'] = True
-        df_recruiting.loc[mask, 'source'] = 'manual_override'
-        print(f"  override applied: {name}")
-    else:
-        # add new row - player wasn't in recruiting file at all
-        new_row = {
-            'Player': name,
-            'School': 'unknown',
-            'Position': 'unknown',
-            'recruiting_rating': override['recruiting_rating'],
-            'recruiting_stars': override['recruiting_stars'],
-            'recruiting_rank': None,
-            'source': 'manual_override',
-            'match_found': True
-        }
-        df_recruiting = pd.concat([df_recruiting, pd.DataFrame([new_row])], ignore_index=True)
-        print(f"  override added: {name}")
+
+
 
 # merge recruiting onto nil_data
 df_train = df_nil_data.merge(
@@ -95,7 +69,7 @@ pos_map = {
 }
 df_train['Position'] = df_train['Position'].replace(pos_map)
 df_roster['position'] = df_roster['position'].replace(pos_map)
-
+df_roster['Full_Name'] = df_roster['firstName'] + ' ' + df_roster['lastName']
 # impute missing recruiting_rating by position median
 # walk-ons and unknown players get their position's median rating
 # this is a reasonable assumption - if we don't know, assume average for that position
@@ -176,13 +150,13 @@ shap_values = explainer.shap_values(X_train)
 
 shap.summary_plot(shap_values, X_train, plot_type='bar', show=False)
 plt.tight_layout()
-plt.savefig('data/fsu/shap_bar_v2.png', dpi=150, bbox_inches='tight')
+plt.savefig('data/uga/shap_bar_v2.png', dpi=150, bbox_inches='tight')
 plt.close()
 print("SHAP bar plot saved.")
 
 shap.summary_plot(shap_values, X_train, show=False)
 plt.tight_layout()
-plt.savefig('data/fsu/shap_summary_v2.png', dpi=150, bbox_inches='tight')
+plt.savefig('data/uga/shap_summary_v2.png', dpi=150, bbox_inches='tight')
 plt.close()
 print("SHAP summary plot saved.")
 
@@ -192,14 +166,22 @@ print("SHAP summary plot saved.")
 
 # depth chart role lookup
 role_mult   = {'starter': 1.45, 'backup': 1.15, 'depth': 1.0}
+
+# fix_name handles ALL CAPS depth chart + roman numerals that title() breaks
+def fix_name(n):
+    n = n.strip().replace('\n', '').title()
+    for s in [' Iv', ' Iii', ' Ii', ' Jr', ' Sr']:
+        n = n.replace(s, s.upper())
+    return n
+
 role_lookup = {}
 for _, row in df_depth.iterrows():
-    if pd.notna(row.get('Starter')):
-        role_lookup[row['Starter'].strip()] = 'starter'
-    if pd.notna(row.get('Backup')):
-        role_lookup[row['Backup'].strip()] = 'backup'
-    if pd.notna(row.get('Depth')):
-        role_lookup[row['Depth'].strip()] = 'depth'
+    if pd.notna(row.get('Starter')) and row['Starter'] not in ['—', '']:
+        role_lookup[fix_name(row['Starter'])] = 'starter'
+    if pd.notna(row.get('Backup')) and row['Backup'] not in ['—', '']:
+        role_lookup[fix_name(row['Backup'])] = 'backup'
+    if pd.notna(row.get('Depth')) and row['Depth'] not in ['—', '']:
+        role_lookup[fix_name(row['Depth'])] = 'depth'
 
 # social imputation lookup
 impute_lookup = {}
@@ -208,38 +190,51 @@ for _, row in df_impute.iterrows():
 
 # on3 floors
 known_nil = {}
-for _, row in df_fsu_nil.iterrows():
+for _, row in df_uga_nil.iterrows():
     val = row['whisper_value'] if pd.notna(row.get('whisper_value')) else row.get('nil_value')
     if pd.notna(val):
         known_nil[row['Full_Name']] = val
 
 # manually looked up instagram followers for top FSU players
-known_social = {
-    'Squirrel White':    30700,
-    'Tommy Castellanos': 107000,
-    'Roydell Williams':  20500,
-    'Jaylen King':       2285,
-    'Jaylin Lucas':      10200,
-    'Earl Little Jr.':   42800,
-    'Markeston Douglas': 4675,
-    'Duce Robinson':     95000,
-    'Mandrell Desir':    8200,
-}
+# known_social = {
+#     'Squirrel White':    30700,
+#     'Tommy Castellanos': 107000,
+#     'Roydell Williams':  20500,
+#     'Jaylen King':       2285,
+#     'Jaylin Lucas':      10200,
+#     'Earl Little Jr.':   42800,
+#     'Markeston Douglas': 4675,
+#     'Duce Robinson':     95000,
+#     'Mandrell Desir':    8200,
+# }
 
+
+known_social = {
+    'Gunnar Stockton': 112000,
+    'Nate Frazier': 52500,
+    'Earnest Greene III': 7681,
+    'KJ Bolden': 91200,
+    'Bryson Beaver': 12000,
+    'Kaiden Prothro': 13400,
+    'Raylen Wilson': 37100,
+    'Drew Bobo': 11900,
+    'Talyn Taylor': 13700,
+    'Elijah Griffin': 11600
+}
 # apply overrides to fsu recruiting ranks too
 for _, override in df_overrides.iterrows():
     name = override['Player']
-    mask = df_fsu_recruiting['Player'] == name
+    mask = df_uga_recruiting['Player'] == name
     if mask.any():
-        df_fsu_recruiting.loc[mask, 'recruiting_rating'] = override['recruiting_rating']
-        df_fsu_recruiting.loc[mask, 'recruiting_stars'] = override['recruiting_stars']
-        df_fsu_recruiting.loc[mask, 'match_found'] = True
+        df_uga_recruiting.loc[mask, 'recruiting_rating'] = override['recruiting_rating']
+        df_uga_recruiting.loc[mask, 'recruiting_stars'] = override['recruiting_stars']
+        df_uga_recruiting.loc[mask, 'match_found'] = True
 
-# fsu recruiting lookup dict
-fsu_recruit_lookup = {}
-for _, row in df_fsu_recruiting.iterrows():
+# uga recruiting lookup dict
+uga_recruit_lookup = {}
+for _, row in df_uga_recruiting.iterrows():
     if row['match_found']:
-        fsu_recruit_lookup[row['Player']] = row['recruiting_rating']
+        uga_recruit_lookup[row['Player']] = row['recruiting_rating']
 
 # build fsu inference rows
 rows = []
@@ -256,7 +251,7 @@ for _, row in df_roster.iterrows():
     # recruit_rating = fsu_recruit_lookup.get(name, None)
     # if recruit_rating is None:
     #     recruit_rating = position_medians.get(pos, overall_median)
-    recruit_rating = fsu_recruit_lookup.get(name, None)
+    recruit_rating = uga_recruit_lookup.get(name, None)
     if recruit_rating is None:
         recruit_rating = 0.78 if year == 1 else 0.82
     rows.append({
@@ -268,47 +263,47 @@ for _, row in df_roster.iterrows():
         'depth_role':       role_lookup.get(name, 'depth'),
     })
 
-df_fsu = pd.DataFrame(rows)
+df_uga = pd.DataFrame(rows)
 
-fsu_pos_dummies = pd.get_dummies(df_fsu['position'], prefix='pos').astype(float)
-X_fsu_raw = pd.concat([df_fsu[['total_social', 'recruiting_rating']], fsu_pos_dummies], axis=1)
-X_fsu = X_fsu_raw.reindex(columns=training_cols, fill_value=0.0)
+fsu_pos_dummies = pd.get_dummies(df_uga['position'], prefix='pos').astype(float)
+X_uga_raw = pd.concat([df_uga[['total_social', 'recruiting_rating']], fsu_pos_dummies], axis=1)
+X_uga = X_uga_raw.reindex(columns=training_cols, fill_value=0.0)
 
-df_fsu['base_nil']      = np.round(model.predict(X_fsu), -2)
-df_fsu['role_mult']     = df_fsu['depth_role'].map(role_mult)
-df_fsu['predicted_nil'] = np.round(df_fsu['base_nil'] * df_fsu['role_mult'], -2)
+df_uga['base_nil']      = np.round(model.predict(X_uga), -2)
+df_uga['role_mult']     = df_uga['depth_role'].map(role_mult)
+df_uga['predicted_nil'] = np.round(df_uga['base_nil'] * df_uga['role_mult'], -2)
 
 # apply on3 floors
 for name, nil_val in known_nil.items():
-    mask = df_fsu['Full_Name'] == name
+    mask = df_uga['Full_Name'] == name
     if mask.any():
-        curr = df_fsu.loc[mask, 'predicted_nil'].values[0]
+        curr = df_uga.loc[mask, 'predicted_nil'].values[0]
         # floor: can't go below known value
         floored = max(curr, nil_val)
         # ceiling: shouldn't go more than 2x known value
         capped = min(floored, nil_val * 2)
-        df_fsu.loc[mask, 'predicted_nil'] = capped
+        df_uga.loc[mask, 'predicted_nil'] = capped
 # global position ceilings - model inflates values, these are realistic market caps
 # based on On3 market data and FSU's actual budget constraints
 position_ceilings = {
-    'QB': 2000000, 'WR': 1200000, 'DL': 800000,
+    'QB': 1500000, 'WR': 1200000, 'DL': 800000,
     'OL': 700000, 'DB': 700000, 'RB': 600000,
     'TE': 500000, 'ATH': 400000
 }
 
 # only apply ceiling to players WITHOUT a known On3 value
-df_fsu['predicted_nil'] = df_fsu.apply(
+df_uga['predicted_nil'] = df_uga.apply(
     lambda r: min(r['predicted_nil'],
     position_ceilings.get(r['position'], 400000))
     if r['Full_Name'] not in known_nil else r['predicted_nil'],
     axis=1
 )
-df_out = df_fsu[['Full_Name', 'position', 'year', 'total_social', 'recruiting_rating',
+df_out = df_uga[['Full_Name', 'position', 'year', 'total_social', 'recruiting_rating',
                   'depth_role', 'role_mult', 'base_nil', 'predicted_nil']].copy()
 df_out = df_out.sort_values('predicted_nil', ascending=False).reset_index(drop=True)
 df_out['predicted_nil_fmt'] = df_out['predicted_nil'].map(lambda x: f"${x:,.0f}")
 
-df_out.to_csv(f"data/fsu/fsu_nil_valuations_final.csv", index=False)
+df_out.to_csv(f"data/uga/uga_nil_valuations_final.csv", index=False)
 
 print(df_out[['Full_Name', 'position', 'depth_role', 'recruiting_rating', 'predicted_nil_fmt']].head(20).to_string(index=False))
-print(f"\nsaved to data/fsu/fsu_nil_valuations_final.csv")
+print(f"\nsaved to data/uga/uga_nil_valuations_final.csv")
