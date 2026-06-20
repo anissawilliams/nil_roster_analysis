@@ -19,30 +19,61 @@ SCHEMA_CONTEXT = """
 You are a SQL assistant for a college football roster database called RosterEdge.
 The SQLite database has these tables:
 
-roster table:
-  id, firstName, lastName, team, weight, height (in inches), jersey,
-  year (1=FR, 2=SO, 3=JR, 4=SR, 5=GR), position,
-  homeCity, homeState, homeCountry
+teams table:
+  team_id (PK), school (e.g. 'Florida State', 'Georgia'), conference, collective_name
 
-transfers table:
-  season, firstName, lastName, position,
-  origin (school they left), destination (school they joined),
-  transferDate, rating, stars, eligibility,
-  direction ('incoming' or 'outgoing' relative to FSU)
+players table:
+  player_id (PK), team_id (FK -> teams), first_name, last_name, full_name,
+  position, depth_role (starter/backup/depth),
+  jersey, year (1=FR 2=SO 3=JR 4=SR 5=GR), height (inches), weight,
+  home_city, home_state
 
 nil_valuations table:
-  Full_Name, position, year, total_social (Instagram followers),
-  depth_role (Starter/Backup/Depth), role_mult,
-  base_nil, predicted_nil (estimated NIL value in dollars),
-  predicted_nil_fmt (formatted string e.g. '$120,000')
+  valuation_id (PK), player_id (FK -> players),
+  recruiting_rating (247Sports composite, 0-1 scale),
+  predicted_nil (estimated NIL value in dollars),
+  floor, ceiling
+
+recruiting_ranks table:
+  rank_id (PK), player_id (FK -> players, nullable),
+  full_name, rating, source, year
+
+manual_overrides table:
+  override_id (PK), player_id (FK -> players, nullable),
+  full_name, rating, reason
+
+transfers table:
+  transfer_id (PK), player_id (FK -> players, nullable),
+  first_name, last_name, position,
+  from_team_id (FK -> teams), to_team_id (FK -> teams),
+  origin (raw school name they left), destination (raw school name they joined),
+  season, rating, stars, eligibility,
+  direction ('Incoming' or 'Outgoing' relative to the home school),
+  transfer_date
+
+Common join patterns:
+  -- player NIL values with names:
+  SELECT p.full_name, p.position, n.predicted_nil
+  FROM nil_valuations n JOIN players p ON n.player_id = p.player_id
+  JOIN teams t ON p.team_id = t.team_id WHERE t.school = 'Florida State'
+
+  -- FSU roster:
+  SELECT p.first_name, p.last_name, p.position, p.year
+  FROM players p JOIN teams t ON p.team_id = t.team_id
+  WHERE t.school = 'Florida State'
+
+  -- incoming transfers to FSU:
+  SELECT t.first_name, t.last_name, t.position, t.origin, t.rating
+  FROM transfers t JOIN teams tm ON t.to_team_id = tm.team_id
+  WHERE tm.school = 'Florida State' AND t.direction = 'Incoming'
 
 Rules:
 - Only write SELECT statements
 - Always LIMIT to 20 rows unless user asks for more
-- Use LIKE for name searches e.g. firstName LIKE '%Ja%'
-- For full name searches use firstName || ' ' || lastName
-- Keep the SQL simple and readable
-- The team name in the roster table is 'Florida State' not 'FSU'
+- Use LIKE for name searches e.g. first_name LIKE '%Ja%'
+- For full name searches use p.full_name LIKE '%name%'
+- Keep SQL simple and readable
+- Always JOIN through teams to filter by school — never assume team_id values
 
 Respond with ONLY a JSON object like this:
 {

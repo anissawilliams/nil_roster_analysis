@@ -9,12 +9,12 @@ st.set_page_config(page_title="RosterEdge", page_icon="🏈", layout="wide")
 
 import os
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-DB_PATH = os.path.join(BASE_DIR, "rosterEdge.db")
+DB_PATH  = os.path.join(BASE_DIR, "rosterEdge.db")
 
 GARNET = "#782F40"
 GOLD   = "#CEB888"
-RED    = "#BA0C2F"   # georgia red
-BLACK  = "#000000"   # georgia black
+RED    = "#BA0C2F"
+BLACK  = "#000000"
 
 YEAR_MAP = {1: "Freshman", 2: "Sophomore", 3: "Junior", 4: "Senior", 5: "Grad"}
 
@@ -29,39 +29,92 @@ def inches_to_feet(n):
 def load_data():
     conn = sqlite3.connect(DB_PATH)
 
-    roster = pd.read_sql("SELECT * FROM roster", conn)
+    # ── roster: players for each school ──────────────────────────────────────
+    roster = pd.read_sql("""
+        SELECT p.player_id, p.first_name as firstName, p.last_name as lastName,
+               p.position, p.jersey, p.year, p.height, p.weight,
+               p.home_city as homeCity, p.home_state as homeState
+        FROM players p
+        JOIN teams t ON p.team_id = t.team_id
+        WHERE t.school = 'Florida State'
+    """, conn)
     roster["name"]           = roster["firstName"] + " " + roster["lastName"]
     roster["class"]          = roster["year"].map(YEAR_MAP).fillna("Other")
     roster["height_display"] = roster["height"].apply(inches_to_feet)
-    roster["hometown"]       = roster["homeCity"] + ", " + roster["homeState"]
+    roster["hometown"]       = roster["homeCity"].fillna("") + ", " + roster["homeState"].fillna("")
 
-    nil = pd.read_sql("""
-        SELECT Full_Name as name, position, predicted_nil as nil_value,
-               depth_role as nil_source
-        FROM nil_valuations
+    uga_roster = pd.read_sql("""
+        SELECT p.player_id, p.first_name as firstName, p.last_name as lastName,
+               p.position, p.jersey, p.year, p.height, p.weight,
+               p.home_city as homeCity, p.home_state as homeState
+        FROM players p
+        JOIN teams t ON p.team_id = t.team_id
+        WHERE t.school = 'Georgia'
     """, conn)
-
-    transfers = pd.read_sql("SELECT * FROM transfers", conn)
-    transfers["name"] = transfers["firstName"] + " " + transfers["lastName"]
-    transfers["transferDate"] = pd.to_datetime(transfers["transferDate"]).dt.strftime("%Y-%m-%d")
-
-    uga_roster = pd.read_sql("SELECT * FROM uga_roster", conn)
     uga_roster["name"]           = uga_roster["firstName"] + " " + uga_roster["lastName"]
     uga_roster["class"]          = uga_roster["year"].map(YEAR_MAP).fillna("Other")
     uga_roster["height_display"] = uga_roster["height"].apply(inches_to_feet)
-    uga_roster["hometown"]       = uga_roster["homeCity"] + ", " + uga_roster["homeState"]
+    uga_roster["hometown"]       = uga_roster["homeCity"].fillna("") + ", " + uga_roster["homeState"].fillna("")
 
-    uga_nil = pd.read_sql("""
-        SELECT Full_Name as name, position, predicted_nil as nil_value,
-               depth_role as nil_source
-        FROM uga_nil_valuations
+    # ── NIL valuations ────────────────────────────────────────────────────────
+    nil = pd.read_sql("""
+        SELECT p.full_name as name, p.position, p.depth_role as nil_source,
+               n.predicted_nil as nil_value, n.recruiting_rating
+        FROM nil_valuations n
+        JOIN players p ON n.player_id = p.player_id
+        JOIN teams t   ON p.team_id   = t.team_id
+        WHERE t.school = 'Florida State'
     """, conn)
 
-    uga_transfers = pd.read_sql("SELECT * FROM uga_transfers", conn)
-    uga_transfers["name"] = uga_transfers["firstName"] + " " + uga_transfers["lastName"]
-    uga_transfers["transferDate"] = pd.to_datetime(uga_transfers["transferDate"]).dt.strftime("%Y-%m-%d")
+    uga_nil = pd.read_sql("""
+        SELECT p.full_name as name, p.position, p.depth_role as nil_source,
+               n.predicted_nil as nil_value, n.recruiting_rating
+        FROM nil_valuations n
+        JOIN players p ON n.player_id = p.player_id
+        JOIN teams t   ON p.team_id   = t.team_id
+        WHERE t.school = 'Georgia'
+    """, conn)
 
-    comparison = pd.read_sql("SELECT * FROM school_comparison", conn)
+    # ── transfers ─────────────────────────────────────────────────────────────
+    transfers = pd.read_sql("""
+        SELECT t.first_name as firstName, t.last_name as lastName,
+               t.position, t.origin, t.destination,
+               t.transfer_date as transferDate,
+               t.eligibility, t.rating, t.stars, t.direction
+        FROM transfers t
+        JOIN teams tm ON (
+            (t.direction = 'Incoming' AND tm.team_id = t.to_team_id)
+            OR (t.direction = 'Outgoing' AND tm.team_id = t.from_team_id)
+        )
+        WHERE tm.school = 'Florida State'
+    """, conn)
+    transfers["name"]         = transfers["firstName"] + " " + transfers["lastName"]
+    transfers["transferDate"] = pd.to_datetime(transfers["transferDate"], errors="coerce").dt.strftime("%Y-%m-%d")
+
+    uga_transfers = pd.read_sql("""
+        SELECT t.first_name as firstName, t.last_name as lastName,
+               t.position, t.origin, t.destination,
+               t.transfer_date as transferDate,
+               t.eligibility, t.rating, t.stars, t.direction
+        FROM transfers t
+        JOIN teams tm ON (
+            (t.direction = 'Incoming' AND tm.team_id = t.to_team_id)
+            OR (t.direction = 'Outgoing' AND tm.team_id = t.from_team_id)
+        )
+        WHERE tm.school = 'Georgia'
+    """, conn)
+    uga_transfers["name"]         = uga_transfers["firstName"] + " " + uga_transfers["lastName"]
+    uga_transfers["transferDate"] = pd.to_datetime(uga_transfers["transferDate"], errors="coerce").dt.strftime("%Y-%m-%d")
+
+    # ── school comparison (replaces school_comparison table) ──────────────────
+    comparison = pd.read_sql("""
+        SELECT p.full_name as name, p.position, p.depth_role,
+               t.school, n.predicted_nil as nil_value, n.recruiting_rating
+        FROM nil_valuations n
+        JOIN players p ON n.player_id = p.player_id
+        JOIN teams   t ON p.team_id   = t.team_id
+        WHERE t.school IN ('Florida State', 'Georgia')
+    """, conn)
 
     conn.close()
     return roster, nil, transfers, uga_roster, uga_nil, uga_transfers, comparison
@@ -104,8 +157,8 @@ with tab1:
     if search:             f = f[f["name"].str.contains(search, case=False, na=False)]
 
     m1, m2, m3 = st.columns(3)
-    m1.metric("Players", len(f))
-    m2.metric("Positions", f["position"].nunique())
+    m1.metric("Players",     len(f))
+    m2.metric("Positions",   f["position"].nunique())
     m3.metric("Home States", f["homeState"].nunique())
 
     left, right = st.columns([2, 1])
@@ -128,9 +181,9 @@ with tab1:
 
 #### NIL VALUATIONS TAB ####
 with tab2:
-    nil_school = st.selectbox("Select School", ["Florida State", "Georgia"], key="nil_school")
+    nil_school   = st.selectbox("Select School", ["Florida State", "Georgia"], key="nil_school")
     nil_data_sel = nil if nil_school == "Florida State" else uga_nil
-    nil_color = GARNET if nil_school == "Florida State" else RED
+    nil_color    = GARNET if nil_school == "Florida State" else RED
     school_label = "Florida State Seminoles" if nil_school == "Florida State" else "Georgia Bulldogs"
 
     st.subheader(f"NIL Valuations — {school_label}")
@@ -158,7 +211,7 @@ with tab2:
 
     with r2:
         st.markdown("**NIL Value by Position**")
-        pos_nil = nil.groupby("position")["nil_value"].sum().sort_values(ascending=False)
+        pos_nil = nil_data_sel.groupby("position")["nil_value"].sum().sort_values(ascending=False)
         fig3, ax3 = plt.subplots(figsize=(5, 4))
         ax3.bar(pos_nil.index, pos_nil.values, color=GOLD, edgecolor=nil_color)
         ax3.yaxis.set_major_formatter(mticker.FuncFormatter(lambda x, _: f"${x/1000:.0f}k"))
@@ -174,12 +227,12 @@ with tab2:
         use_container_width=True, hide_index=True, height=500,
     )
 
-#### TRANSFER PORTAL TAB ###
+#### TRANSFER PORTAL TAB ####
 with tab3:
     transfer_school = st.selectbox("Select School", ["Florida State", "Georgia"], key="transfer_school")
-    transfers_sel = transfers if transfer_school == "Florida State" else uga_transfers
-    transfer_color = GARNET if transfer_school == "Florida State" else RED
-    transfer_label = "Florida State Seminoles" if transfer_school == "Florida State" else "Georgia Bulldogs"
+    transfers_sel   = transfers if transfer_school == "Florida State" else uga_transfers
+    transfer_color  = GARNET if transfer_school == "Florida State" else RED
+    transfer_label  = "Florida State Seminoles" if transfer_school == "Florida State" else "Georgia Bulldogs"
 
     st.subheader(f"2025 Transfer Portal Activity — {transfer_label}")
 
@@ -187,9 +240,9 @@ with tab3:
     outgoing = transfers_sel[transfers_sel["direction"] == "Outgoing"]
 
     t1, t2, t3, t4 = st.columns(4)
-    t1.metric("Incoming",    len(incoming))
-    t2.metric("Outgoing",    len(outgoing))
-    t3.metric("Net Change",  f"{len(incoming) - len(outgoing):+d}")
+    t1.metric("Incoming",            len(incoming))
+    t2.metric("Outgoing",            len(outgoing))
+    t3.metric("Net Change",          f"{len(incoming) - len(outgoing):+d}")
     t4.metric("Avg Incoming Rating", f"{incoming['rating'].mean():.2f}" if incoming['rating'].notna().any() else "N/A")
 
     st.markdown("#### ✅ Incoming Transfers")
@@ -230,36 +283,33 @@ with tab4:
     fsu_data = comparison[comparison["school"] == "Florida State"]
     uga_data = comparison[comparison["school"] == "Georgia"]
 
-    # top level metrics side by side
     col_fsu, col_uga = st.columns(2)
-
     with col_fsu:
         st.markdown("### 🟥 Florida State")
-        st.metric("Total Roster NIL",   f"${fsu_data['nil_value'].sum():,.0f}")
-        st.metric("Avg per Player",     f"${fsu_data['nil_value'].mean():,.0f}")
-        st.metric("Median per Player",  f"${fsu_data['nil_value'].median():,.0f}")
-        st.metric("Roster Size",        len(fsu_data))
+        st.metric("Total Roster NIL",  f"${fsu_data['nil_value'].sum():,.0f}")
+        st.metric("Avg per Player",    f"${fsu_data['nil_value'].mean():,.0f}")
+        st.metric("Median per Player", f"${fsu_data['nil_value'].median():,.0f}")
+        st.metric("Roster Size",       len(fsu_data))
 
     with col_uga:
         st.markdown("### ⬛ Georgia")
-        st.metric("Total Roster NIL",   f"${uga_data['nil_value'].sum():,.0f}")
-        st.metric("Avg per Player",     f"${uga_data['nil_value'].mean():,.0f}")
-        st.metric("Median per Player",  f"${uga_data['nil_value'].median():,.0f}")
-        st.metric("Roster Size",        len(uga_data))
+        st.metric("Total Roster NIL",  f"${uga_data['nil_value'].sum():,.0f}")
+        st.metric("Avg per Player",    f"${uga_data['nil_value'].mean():,.0f}")
+        st.metric("Median per Player", f"${uga_data['nil_value'].median():,.0f}")
+        st.metric("Roster Size",       len(uga_data))
 
     st.divider()
 
-    # position median comparison
     st.markdown("#### NIL Market Value by Position")
     st.caption("Median predicted NIL value per position — same model, different roster compositions")
 
-    fsu_pos = fsu_data.groupby("position")["nil_value"].median().rename("Florida State")
-    uga_pos = uga_data.groupby("position")["nil_value"].median().rename("Georgia")
+    fsu_pos     = fsu_data.groupby("position")["nil_value"].median().rename("Florida State")
+    uga_pos     = uga_data.groupby("position")["nil_value"].median().rename("Georgia")
     pos_compare = pd.concat([fsu_pos, uga_pos], axis=1).fillna(0)
     pos_compare = pos_compare.sort_values("Florida State", ascending=False)
 
     fig6, ax6 = plt.subplots(figsize=(10, 5))
-    x = range(len(pos_compare))
+    x     = range(len(pos_compare))
     width = 0.35
     ax6.bar([i - width/2 for i in x], pos_compare["Florida State"], width, label="Florida State", color=GARNET)
     ax6.bar([i + width/2 for i in x], pos_compare["Georgia"],        width, label="Georgia",        color=RED)
@@ -273,12 +323,11 @@ with tab4:
 
     st.divider()
 
-    # recruiting rating comparison
     st.markdown("#### Recruiting Talent Comparison")
     st.caption("Average recruiting rating by position — higher = more highly recruited players at that position")
 
-    fsu_rec = fsu_data.groupby("position")["recruiting_rating"].mean().rename("Florida State")
-    uga_rec = uga_data.groupby("position")["recruiting_rating"].mean().rename("Georgia")
+    fsu_rec     = fsu_data.groupby("position")["recruiting_rating"].mean().rename("Florida State")
+    uga_rec     = uga_data.groupby("position")["recruiting_rating"].mean().rename("Georgia")
     rec_compare = pd.concat([fsu_rec, uga_rec], axis=1).fillna(0)
     rec_compare = rec_compare.sort_values("Georgia", ascending=False)
 
@@ -296,7 +345,6 @@ with tab4:
 
     st.divider()
 
-    # starter comparison - top predicted value starters side by side
     st.markdown("#### Top Starters by Predicted NIL Value")
     left3, right3 = st.columns(2)
 
@@ -306,7 +354,7 @@ with tab4:
             .sort_values("nil_value", ascending=False).head(10)
         st.dataframe(
             fsu_starters[["name","position","recruiting_rating","nil_value"]]
-                .rename(columns={"nil_value":"NIL Est.", "recruiting_rating":"Recruit Rating"}),
+                .rename(columns={"nil_value":"NIL Est.","recruiting_rating":"Recruit Rating"}),
             use_container_width=True, hide_index=True
         )
 
@@ -316,7 +364,7 @@ with tab4:
             .sort_values("nil_value", ascending=False).head(10)
         st.dataframe(
             uga_starters[["name","position","recruiting_rating","nil_value"]]
-                .rename(columns={"nil_value":"NIL Est.", "recruiting_rating":"Recruit Rating"}),
+                .rename(columns={"nil_value":"NIL Est.","recruiting_rating":"Recruit Rating"}),
             use_container_width=True, hide_index=True
         )
 
