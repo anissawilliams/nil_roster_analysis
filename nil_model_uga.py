@@ -48,8 +48,6 @@ print(df_depth.head())
 print(df_depth.columns.tolist())
 
 
-
-
 # merge recruiting onto nil_data
 df_train = df_nil_data.merge(
     df_recruiting[['Player', 'recruiting_rating', 'recruiting_stars', 'source']],
@@ -274,17 +272,32 @@ df_uga['role_mult']     = df_uga['depth_role'].map(role_mult)
 df_uga['predicted_nil'] = np.round(df_uga['base_nil'] * df_uga['role_mult'], -2)
 
 # apply on3 floors
+# also scale the 2x ceiling by depth role - found that depth/backup players
+# with a known on3 value were blowing past starters bc 2x their on3 number
+# is still huge if their on3 number itself was already high (ex: high recruit
+# who is buried on the depth chart). same depth_ceiling_mult used below for
+# the global position ceilings.
+depth_ceiling_mult = {'starter': 1.0, 'backup': 0.5, 'depth': 0.25}
+
 for name, nil_val in known_nil.items():
     mask = df_uga['Full_Name'] == name
     if mask.any():
         curr = df_uga.loc[mask, 'predicted_nil'].values[0]
-        # floor: can't go below known value
+        role = df_uga.loc[mask, 'depth_role'].values[0]
+        # floor: can't go below known value, no matter the role
         floored = max(curr, nil_val)
-        # ceiling: shouldn't go more than 2x known value
-        capped = min(floored, nil_val * 2)
+        # ceiling: 2x known value, but scaled down for backup/depth
+        # so a buried 5-star recruit doesnt out-earn the actual starters
+        capped = min(floored, nil_val * 2 * depth_ceiling_mult.get(role, 0.25))
+        # safety net - ceiling shouldnt go below the floor itself
+        capped = max(capped, nil_val)
         df_uga.loc[mask, 'predicted_nil'] = capped
+
 # global position ceilings - model inflates values, these are realistic market caps
-# based on On3 market data and FSU's actual budget constraints
+# based on On3 market data
+# also found a bug where a depth QB was hitting the same $1.5M ceiling as a
+# starter bc the ceiling didnt care about depth_role at all. fixed by scaling
+# it down using the same depth_ceiling_mult dict from above
 position_ceilings = {
     'QB': 1500000, 'WR': 1200000, 'DL': 800000,
     'OL': 700000, 'DB': 700000, 'RB': 600000,
@@ -293,11 +306,14 @@ position_ceilings = {
 
 # only apply ceiling to players WITHOUT a known On3 value
 df_uga['predicted_nil'] = df_uga.apply(
-    lambda r: min(r['predicted_nil'],
-    position_ceilings.get(r['position'], 400000))
+    lambda r: min(
+        r['predicted_nil'],
+        position_ceilings.get(r['position'], 400000) * depth_ceiling_mult.get(r['depth_role'], 0.25)
+    )
     if r['Full_Name'] not in known_nil else r['predicted_nil'],
     axis=1
 )
+
 df_out = df_uga[['Full_Name', 'position', 'year', 'total_social', 'recruiting_rating',
                   'depth_role', 'role_mult', 'base_nil', 'predicted_nil']].copy()
 df_out = df_out.sort_values('predicted_nil', ascending=False).reset_index(drop=True)

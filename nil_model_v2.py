@@ -295,11 +295,15 @@ position_ceilings = {
     'OL': 700000, 'DB': 700000, 'RB': 600000,
     'TE': 500000, 'ATH': 400000
 }
+# apply multiplier to depth role - this is a bit of a hack, but it works
+# changed these from 1.45, 1.15, 1.0 to 1.0, 1.0, 1.25 to the values below for a little tighter bounds
+depth_ceiling_mult = {'starter': 1.0, 'backup': .5, 'depth':.25}
 
-# only apply ceiling to players WITHOUT a known On3 value
 df_fsu['predicted_nil'] = df_fsu.apply(
-    lambda r: min(r['predicted_nil'],
-    position_ceilings.get(r['position'], 400000))
+    lambda r: min(
+        r['predicted_nil'],
+        position_ceilings.get(r['position'], 400000) * depth_ceiling_mult.get(r['depth_role'], 0.25)
+    )
     if r['Full_Name'] not in known_nil else r['predicted_nil'],
     axis=1
 )
@@ -307,7 +311,12 @@ df_out = df_fsu[['Full_Name', 'position', 'year', 'total_social', 'recruiting_ra
                   'depth_role', 'role_mult', 'base_nil', 'predicted_nil']].copy()
 df_out = df_out.sort_values('predicted_nil', ascending=False).reset_index(drop=True)
 df_out['predicted_nil_fmt'] = df_out['predicted_nil'].map(lambda x: f"${x:,.0f}")
-
+print(df_fsu[df_fsu['Full_Name'].str.contains('Castellanos|Speedy', case=False, na=False)][
+    ['Full_Name','position','depth_role','recruiting_rating','base_nil','role_mult','predicted_nil']
+])
+print(df_fsu[df_fsu['Full_Name'] == 'Kevin Sperry'][
+    ['Full_Name','position','depth_role','recruiting_rating','base_nil','role_mult','predicted_nil']
+])
 df_out.to_csv(f"data/fsu/fsu_nil_valuations_final.csv", index=False)
 
 print(df_out[['Full_Name', 'position', 'depth_role', 'recruiting_rating', 'predicted_nil_fmt']].head(20).to_string(index=False))
